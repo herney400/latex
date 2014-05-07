@@ -1,0 +1,26 @@
+\section{Justificación del modelo}
+
+\subsection{Uso de matrices y codificación binaria de dominios}
+
+El uso de matrices permite modelar con más precisión algunas restricciones, como es el caso de la separación y posibilita que el canal este asignado a más de un operador a diferencia del caso de una lista de canales.
+\\\\
+El uso de dominios binarios permite modelar con mayor facilidad las restricciones de tope, separación entre operadores diferentes y de no asignar en canales marcados como asignados y reservados. Además hace posible el uso de marcadores para los canales como reservado, inutilizado y asignado en división sin hacer uso de artilugios propios de la implementación, como codificarlos como operadores virtuales. 
+
+\subsection{Tipos de restricciones}
+
+Los tipos de restricciones han sido extraídos de la solución al problema de \textit{channel assigment} \cite{Hurley} y del uso de topes por operador por parte del gobierno nacional colombiano \cite{Tope}.
+\\\\
+Se definen los tipos de restricciones así:
+
+\begin{itemize}
+	\item \textbf{Restricciones co-canal:} Son aquellas restricciones aplicadas a transmisores ubicados dentro de una pequeña zona, se asume en el modelo que un operador tiene transmisores en toda una zona geográfica, por lo tanto se debe garantizar una separación entre dos operadores diferentes.
+	\item \textbf{Restricciones triviales:} Garantizan que se respete la asignación actual de los operadores, las asignaciones no se pueden mover en principio por los enormes costos que se generan en ese proceso.
+	\item \textbf{Restricciones legales:} La única restricción que se toma es la de topes por operador, no se evalúa calidad de servicio ni potencia de emisiones, eso es objeto de estudio futuro. 
+\end{itemize}
+
+\subsection{Limitaciones de encontrar soluciones óptimas}
+
+Con el modelo se pueden obtener soluciones óptimas para la asignación en una zona determinada, pero no en cada una de las divisiones de esa zona. Por ejemplo, para el caso de los departamentos la asignación obtenida a nivel departamental cumplirá todas las restricciones y tendrá el mejor costo, pero no necesariamente es así para los municipios que componen el departamento ya que al no considerar el detalle, un operador puede quedar con una asignación con un peor costo que la solución óptima considerando cada uno de los municipios.
+\\\\
+Esta decisión fue tomada debido al gran tamaño que tomaban las entradas al considerar el detalle de las divisiones territoriales, dificultaban su lectura y manejo en el aplicativo, además complica enormemente el modelado del problema ya que las restricciones deben considerar las asignaciones en cada una de las divisiones de la zona geográfica. En su lugar se ha optado por marcar los canales como asignados si alguna de las divisiones del territorio está asignado.
+

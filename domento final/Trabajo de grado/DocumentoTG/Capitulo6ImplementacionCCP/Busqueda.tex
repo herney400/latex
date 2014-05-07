@@ -1,0 +1,23 @@
+\section{Estrategias de búsqueda} \label{sec:esbusq}
+
+Las estrategias de búsqueda utilizadas en el aplicativo se muestran en la tabla \ref{table:esBusqueda}. La función objetivo en los costos consiste en encontrar la solución con el costo mínimo.
+
+\begin{center}
+\begin{longtable}{|p{9.5cm}|p{7cm}|}
+	\caption{Estrategias de búsqueda} \label{table:esBusqueda}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Función} \\
+	\hline
+	Buscar mejor solución minimizando el número de cambios de asignación de canales para un operador & $min(cost_{1})$\\
+	\hline
+	Buscar mejor solución minimizando la diferencia entre el número de canales y el mayor bloque de canales libres &  $min(cost_{2})$\\
+	\hline
+	Buscar mejor solución minimizando el número de canales inútiles&  $min(cost_{3})$\\
+	\hline
+	Buscar por mejor costo total &  $min(cost_{T})$\\
+	\hline
+	Ninguno & No hay criterio de selección para la mejor solución \\
+	\hline
+\end{longtable}	
+\end{center}
+

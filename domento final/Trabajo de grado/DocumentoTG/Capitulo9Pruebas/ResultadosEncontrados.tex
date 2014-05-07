@@ -1,0 +1,62 @@
+\section{Resultados}
+
+\subsection{Solución basada en programación por restricciones}
+
+\subsubsection{Resultados}
+
+\begin{enumerate}
+	\item Comparando entre sí las estrategias de distribución creadas en este proyecto no presentan diferencias notables con respecto al desempeño ante entradas sin características.
+	\item El consumo de memoria de la ejecución depende del motor virtual de \textit{Mozart} y no del tamaño de la entrada.
+	\item El mejor desempeño en uso de recursos, se encuentra cuando no se utiliza el motor de búsqueda, sin embargo éste presenta las peores soluciones.
+	\item El uso de los distribuidores que intentan asignar al inicio de la banda presentan un mejor rendimiento de los que intentan asignar inicialmente al final, cuando la banda se encuentra asignada en su inicio o final.
+	\item No se muestra ventaja de ningún distribuidor, si la banda se encuentra asignada aleatoriamente.
+	\item A medida que una banda se encuentra con más canales asignados, los parámetros de desempeño mejoran sensiblemente.
+	\item Con respecto a instancia con requerimientos homogéneos, no es posible obtener alguna mejora sustancial con alguno de los distribuidores implementados en el proyecto.
+	\item Las ejecuciones con instancias que tiene requerimientos heterogéneos, no muestran mejora frente a la estrategia de búsqueda que se aplique.
+	\item Al variar el tamaño de los requerimientos, las estrategias creadas en el proyecto tienden a buscar más rápidamente una solución válida que las estrategias genéricas.
+	\item En las estrategias de distribución propias del proyecto, los parámetros de desempeño presentan un comportamiento proporcional al tamaño de la entrada, los genéricos de \textit{Mozart} no presentan variación en su desempeño frente a la entrada, pero no funcionan si la entrada es muy grande.
+	\item El nivel de recomputación no afecta sensiblemente el desempeño de la aplicación. Este permite mejorar un poco los parámetros de rendimiento, pero después de cierto valor éstos empeoran al tomar en cuenta la carga adicional al recalcular los nodos.
+	\item El consumo de memoria depende de la compilación del código.
+	\item Las restricciones flexibles y las iteraciones permiten probar quitando una o más restricciones, para encontrar posibles soluciones a entradas que no cumplen las restricciones.
+\end{enumerate}
+
+\subsubsection{Desventajas}
+
+La estructura de datos manejada en el proyecto tiene una complejidad de $O(c^{2})$ donde $c$ es el número de canales de la banda, por ser una matriz de operadores por número de canales, por lo que presenta un crecimiento considerable al aumentar el tamaño de la banda, así mismo los propagadores que se deben crear para implementar las restricciones dependen en gran medida del tamaño de la entrada, por lo que el aplicativo puede fallar cuando se tienen entradas grandes y se expanden tantos nodos que la máquina virtual de \textit{Mozart OZ} presenta un desborde.\\
+También se ha encontrado que si el archivo es grande \footnote{El archivo es de una banda con  más de 100 canales}, el \textit{Parser} de \textit{Mozart OZ} puede presentar problemas por el gran tamaño del árbol de dependencias creado y puede producir un desborde.
+\\\\
+La limitación de memoria viene dada por la infraestructura servidor virtual del grupo AVISPA, por lo que se ve la necesidad de utilizar estrategias de distribución que se deben considerar a partir del modelo, el modelo propuesto en éste proyecto tiene una alta dependencia de las variables de propagación entre sí que dificultan la creación de este tipo de estrategias.
+
+\subsection{Solución basada en algoritmos genéticos}
+
+El algoritmo genético presenta los siguientes resultados:
+
+\begin{enumerate}
+	\item El algoritmo puede encontrar malas soluciones en un corto tiempo, pero se debe dejar un tiempo suficiente para encontrar buenas soluciones.
+	\item A medida que crece la entrada se debe dejar más tiempo el algoritmo para que encuentre soluciones válidas y eventualmente soluciones óptimas.
+	\item El diseño tiene problemas de mínimos locales que pueden hacer que en ciertas ejecuciones del algoritmo no se encuentre nunca la solución óptima, así se tenga una solución válida.
+	\item Por el diseño del algoritmo, no es posible saber si se tiene una solución óptima al problema.
+	\item El algoritmo presenta una convergencia muy lenta ante entradas grandes, por lo que es necesario estudiar técnicas para acelerar la convergencia del algoritmo a una solución válida.
+\end{enumerate}
+
+\subsection{Análisis comparativo entre los métodos de restricciones y evolutivo}
+
+Cada uno de los métodos de solución del problema tiene sus ventajas y sus desventajas, para entradas pequeñas ambos son apropiados, pero si la entrada crece el algoritmo genético requiere un tiempo demasiado grande para llegar a una solución válida, a diferencia del método por programación por restricciones.
+\\\\
+Sin embargo, ante entradas pequeñas que no cumplen requerimientos el algoritmo genético puede funcionar ya que a pesar de no se cumpla una o más restricciones, se buscará la solución con el menor costo, a diferencia del método de programación por restricciones donde es necesario elegir que restricciones flexibilizar y usar iteraciones para escoger la mejor combinación para obtener el mejor costo posible ante estas instancias.
+
+\subsection{Análisis de extensibilidad del modelo}
+
+Como se pudo observar en las diferentes pruebas el modelo de asignación de canales y la metodología propuesta se pueden expandir sin mayores cambios a métodos de solución del problema diferentes al de programación por restricciones, como fue el caso del algoritmo genético que se implementó en éste proyecto.
+\\\\
+Los cambios que se deben tomar en cuenta está principalmente enfocado a los formatos de entrada, ya que el formato XML es complejo y algunos lenguajes no cuentan con librerías para obtener su información directamente, lo que hace necesario crear otros formatos y utilizar módulos intermedios que hagan la conversión de los formatos de entrada y salida.
+
+\subsection{Aplicación del modelo en situaciones reales}
+
+El proceso de pruebas permite establecer que el modelo creado en el proyecto se puede aplicar en casos reales así:
+
+\begin{itemize}
+	\item Instancias pequeñas del problema, en el cual no se tenga un gran número de requerimientos de entrada.
+	\item Casos donde tener una asignación no óptima en las divisiones de un territorio no represente problemas graves en la normal prestación de servicios.
+	\item El prototipo construido, ayuda a obtener una aproximación al comportamiento de una aplicativo más completo para la asignación del espectro utilizando programación por restricciones.
+\end{itemize}

@@ -1,0 +1,70 @@
+\section{Diseño e implementación de la aplicación}
+
+De acuerdo a lo especificado en el capítulo \ref{capimp}, se realizan algunos ajustes para permitir la implementación bajo el criterio de un algoritmo genético.
+
+\subsection{Parámetros de la aplicación}
+
+A partir de la metodología para aplicaciones Web del grupo Avispa se han definido los siguientes parámetros para la aplicación:
+
+\begin{center}
+\begin{longtable}{|p{7cm}|p{7cm}|}
+	\caption{Parámetros para la aplicación basada el algoritmos genéticos}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Parámetro} & \cellcolor[gray]{0.9}\textbf{Función} \\
+	\hline
+	$--n$ & Número de veces que se ejecuta el algoritmo.\\
+	\hline
+	$--p$& Población inicial.\\
+	\hline
+	$--ec$ & Probabilidad de cruce, entre 0 y 100.\\
+	\hline
+	$--em$ & Probabilidad de mutación, entre 0 y 100.\\
+	\hline
+\end{longtable}	
+\end{center}
+
+\subsection{Formato entradas}
+
+Debido a que en el lenguaje $C++$ no es fácil de forma nativa realizar la lectura de entradas en formato XML, se ha definido una entrada propia para la aplicación, que se obtiene a partir de un proceso de conversión que realiza el módulo de conversor de entradas que se explica en la sección \ref{sec:conxmlgenetico}. El formato de la entrada es el siguiente:
+
+\lstset{frameround=fttt}
+\begin{lstlisting}[frame=trBL, language=bash]
+	Total de canales
+	Numero de operadores presentes
+	Numero de operadores que requieren asignacion
+	Numero total de operadores
+	Numero de operadores presentes que no solicitan asignacion
+	Numero de operadores presentes que solictan ssignacion
+	Operadores que solicitan asignacion
+	Requerimientos de operadores que solicitan asignacion
+	Numero de operadores que no están presentes y solicitan asignacion 
+	Lista de operadores presentes en la banda
+	Lista de operadores actuales que no solictan asignacion
+	Lista de operadores actuales que si solicitan asignacion
+	Lista de operadores que entran y no solicitan asignacion
+	Total de operadores que van a ir en la banda
+	Lista de asignaciones actuales
+	Lista de asignaciones en divisiones
+	Lista de CanalesReservados
+	Lista de CanalesInutlizados
+	ID banda de frecuencia
+	ID rango de frecuencia
+	Separacion
+	Tope
+	Tipo asignacion geografica
+	ID asignacion geografica
+\end{lstlisting}
+
+En el anexo ejemplo de entrada para algoritmo genético de la página \pageref{anexo:inGenetico} se puede consultar una instancia para el problema de asignación de canales para el algoritmo genético.
+
+\subsection{Módulos}
+
+El aplicativo consta de dos módulos principales que son explicados a continuación.
+
+\subsubsection{Conversor XML a entradas} \label{sec:conxmlgenetico}
+
+Èste módulo es una pequeña modificación al módulo de entradas de la aplicación basada en programación por restricciones explicado en la sección \ref{sec:convEntCPP}. La modificación consiste en que en lugar de almacenar en memoria los datos extraídos del XML de entrada genera un archivo de entrada para el algoritmo genético, de acuerdo al formato que se ha establecido anteriormente.
+
+\subsubsection{Aplicativo}
+
+El aplicativo está escrito en lenguaje $C++$ y realiza todas las tareas que se han definido en la sección \ref{sec:algGen}, como salida se genera un archivo XML con el formato especificado en la sección \ref{sec:formatSal}.

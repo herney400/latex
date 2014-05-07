@@ -1,0 +1,70 @@
+\section{Información del cuadro nacional de atribución de frecuencias.}
+
+Para realizar la gestión del espectro se debe sistematizar el cuadro nacional de atribución de frecuencias \cite{Cuadro}; en este proyecto se realizan los siguientes tareas para realizar éste proceso.
+
+\begin{enumerate}
+	\item Abstracción del cuadro nacional nacional de atribución de frecuencias tomando en cuenta los alcances del proyecto definidos en el capítulo \ref{cap3}.
+	\item Diseño de la base de datos de acuerdo a la abstracción del cuadro nacional de atribución de frecuencia.
+	\item Creación de datos de prueba para la aplicación prototipo.
+\end{enumerate}
+
+\subsection{Abstracción.}
+
+De acuerdo a los alcances del proyecto, se abstrae el cuadro nacional de atribución de frecuencias \cite{Cuadro} bajo las siguientes consideraciones:
+
+\begin{itemize}
+	\item Se utilizan los rangos de frecuencia definidos por servicios en el cuadro nacional de atribución de frecuencias, excepto para servicios marítimo móvil y fijo.
+	\item Se emplean las grandes bandas de frecuencia HF, VHF, UHF, SHF, EHF para agrupar los diferentes rangos de frecuencia de acuerdo a su frecuencia inicial.
+	\item La asignación es jerárquica territorialmente, es decir que una asignación nacional aplica en todo el territorio colombiano, una departamental en sus municipios y así sucesivamente.
+	\item Para la división territorial se toma en cuenta las estaciones monitoras fijas del cuadro nacional de atribución de frecuencias y la organización territorial de Colombia \cite{OrgDANE} tomando la estructura de departamentos y municipios.
+\end{itemize}
+
+\subsection{Diseño de la base de datos.}
+
+Para el diseño de la base de datos se toma en cuenta lo siguiente:
+
+\begin{itemize}
+	\item Los rangos de frecuencias son elementos de los grandes bandas de frecuencia. Cada rango tiene autorizado uno o más servicios.
+	\item Los canales son elementos de los rangos de frecuencia.
+	\item Una asignación es una entidad especializada por tipo: nacional, territorial, departamental y municipal.
+	\item Para determinar una asignación en una entidad territorial debe tomarse en cuenta las asignaciones en las entidades a las cuales ésta pertenece hasta llegar a las asignaciones nacionales.
+	\item Los operadores prestan uno o más servicios.
+\end{itemize}
+
+De acuerdo a lo anterior, se define el modelo entidad relación de la base de datos, el cual puede se consultando en el anexo modelo entidad relación en la página \pageref{modER}.
+
+\subsection{Datos de prueba en la aplicación prototipo.}
+
+En la tabla \ref{dataPrueba} se muestran los diferentes datos que se encuentran la base de datos y su fuente, es de anotar que algunos son aleatorios, por la imposibilidad de obtenerlos de la ANE.
+
+\begin{center}
+\begin{longtable}{|p{7cm}|p{9.5cm}|}
+	\caption{Datos de prueba de la aplicación prototipo} \label{dataPrueba} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Dato} & \cellcolor[gray]{0.9}\textbf{Fuente} \\
+	\hline
+	Bandas de frecuencia & Cuadro nacional de atribución de bandas de frecuencias página 47.\\
+	\hline
+	Rangos de frecuencia & Cuadro nacional de atribución de bandas de frecuencias páginas 246-253,272-275 y 279-418.\\
+	\hline
+	Servicios & Cuadro nacional de atribución de bandas de frecuencias páginas 23-27.\\
+	\hline
+	Servicios por rango de frecuencia & Cuadro nacional de atribución de bandas de frecuencias páginas 51-141.\\
+	\hline
+	Operadores & Operadores concodios que utilizan el espectro conocidos en Colombia que prestan servicios en el espectro.\\
+	\hline
+	Servicios por operador & Ninguna.\\
+	\hline
+	Tope por operador en rango de frecuencia & Ninguna.\\
+	\hline
+	Separación en rango de frecuencia & Ninguna.\\
+	\hline
+	División territorial o regiones & Para las regiones se utiliza la definición del cuadro nacional de atribución de bandas de frecuencias en el anexo II estaciones monitoras fijas.\\
+	\hline
+	Lista de departamentos y municipios & Biblioteca virtual del Banco de la República de Colombia \cite{ListMunDep}, actualizada al 2005. \\
+	\hline
+	Asignación actual & Ninguna. \\
+	\hline
+\end{longtable}	
+\end{center}
+

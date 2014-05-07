@@ -1,0 +1,106 @@
+\section{Diseño e implementación del aplicativo}
+
+\subsection{Estructura de la aplicación}
+
+La aplicación se diseña de acuerdo a la siguiente arquitectura:
+
+\begin{itemize}
+	\item \textbf{Vista:} Son las interfaces Web que tiene la aplicación. Para mayor información consultar capítulo \ref{cap7}. Esta en el proyecto es provista por el sistema de gestión de contenido Drupal\cite{Drupal}.
+	\item \textbf{Comunicación:} Provee las funciones necesarias para comunicar las capas vista y ejecución. En el proyecto son las funciones escritas en diferentes archivos auxiliares usando lenguajes \textit{PHP} y \textit{JavaScript} que permiten tomar la información provista por el usuario y procesarla.
+	\item \textbf{Ejecución:} Son los algoritmos y funciones que toman los datos provistos por la capa de comunicación y envía información para ser desplegada al usuario. En el proyecto es básicamente los programas escritos en \textit{Mozart OZ}\cite{MozartWeb} para la aplicación por programación por restricciones y \textit{C++} para el caso de la aplicación por algoritmos genéticos.
+	\item \textbf{Persistencia:} Está compuesta por la base de datos y la estructura de archivos en el servidor donde se almacena información de forma consistente. En el proyecto está compuesta por los archivos de entrada en formato XML, archivos de salida en formato XML y la base de datos que abstrae el cuadro nacional de atribución de frecuencias.
+\end{itemize}
+
+\subsection{Parámetros de la aplicación.}
+
+Los parámetros propios de la aplicación usando programación por restricciones están definidos en la tabla \ref{table:paramRestri}.
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{13.5cm}|}
+	\caption{Parámetros aplicación por restricciones} \label{table:paramRestri}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Parámetro} & \cellcolor[gray]{0.9}\textbf{Función} \\
+	\hline
+	$--motor$ & Seleccionar motor de búsqueda, número entero entre 1 y 10\\
+	\hline
+	$--es$ &  Elegir estrategia de distribución.\\
+	\hline
+	$--rc$ &  Nivel de recomputación.\\
+	\hline
+	$--nmas$ &  Campo binario, si es 1 no se mantienen asignaciones actuales de operadores que solicitan asignación, en caso contrario las mantiene.\\
+	\hline
+	$--ntope$ & Campo binario, si es 1 se flexibiliza la restricción de tope por operador. \\
+	\hline
+	$--nsep$ & Campo binario, si es 1 no se considera la separación mínima de canales entre operadores diferente.\\
+	\hline
+	$--nopc$ & Campo entero positivo mayor que cero, indica el número de operadores por canal.\\
+	\hline
+\end{longtable}	
+\end{center}
+
+\subsection{Módulos del aplicativo}
+
+La aplicación cuenta con diferentes módulos con funciones específicas para realizar los procesos de:
+
+\begin{itemize}
+	\item Lectura de entrada XML.
+	\item Imposición de restricciones.
+	\item Implementación de estrategias de búsqueda.
+	\item Implementación de estrategias de distribución.
+	\item Generación de salidas XML.
+\end{itemize}
+
+\subsubsection{Aplicación.}
+
+En la figura ubicada en el anexo diagrama de flujo en la página \pageref{flujoApp} se describe el proceso de ejecución del aplicativo del proyecto basado en programación por restricciones y escrito en lenguaje \textit{Mozart OZ}. 
+
+\subsubsection{Conversor de entradas.} \label{sec:convEntCPP}
+
+Para la conversión de entradas se hace uso del \textit{Parser} conocido como \textit{XML Parser}, que permite tomar una estructura de archivo en formato XML y transformarlo en un árbol de etiquetas que facilita la extracción de la información.
+
+\subsubsection{Restricciones.}
+
+Las restricciones son escritas usando el módulo de dominios finitos de \textit{Mozart OZ} conocido como \textit{FD}. Se hace uso de condicionales para imponer la flexibilidad de restricciones.
+
+\subsubsection{Cálculo de costos.}
+
+Para el cálculo de costos se hace uso de las funciones reificadas del módulo \textit{FD}. Es importante aclarar que una restricción reificada presenta una salida binaria: 0 si no se cumple o 1 si se cumple; además no es una restricción que se imponga en la ejecución, es decir sí ésta falla la ejecución continúa sin problema.
+\\\\
+En el proyecto se encontraron estas restricciones especialmente útiles para calcular los costos de cada solución.
+
+\subsubsection{Funciones auxiliares.}
+
+Existen algunas funciones auxiliares que se mencionan brevemente en la tabla \ref{table:funauxiliar}.
+
+\begin{center}
+\begin{longtable}{|p{5cm}|p{11.5cm}|}
+	\caption{Funciones auxiliares} \label{table:funauxiliar}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Función} & \cellcolor[gray]{0.9}\textbf{Descripción} \\
+	\hline
+	Trasponer Salida & Permite trasponer la matriz de la variable de decisión para efectos de facilitar la escritura de algunas restricciones\\
+	\hline
+	Cálculo de variables auxiliares &  Permite el cálculo de variables como es el caso de $ECC$.\\
+	\hline
+	Sumar estructura &  Permite calcular la suma de una fila de una matriz o bien de una lista. Muy útil para el cálculo de costos.\\
+	\hline
+\end{longtable}	
+\end{center}
+
+\subsubsection{Estrategias de búsqueda.}
+
+Las diferentes estrategias de búsqueda hacen uso de la posibilidad que provee \textit{Mozart} se comparar dos soluciones $A$ y $B$, eligiendo cual es la mejor.
+\\\\
+En el caso del aplicativo, se encuentra inicialmente una solución y se compara ésta hasta que se encuentre una mejor; una vez se ha encontrado una mejor ésta se compara con las que se encuentren más adelante.
+
+\subsubsection{Distribuidores}
+
+Las distribuidores hacen uso del entorno \textit{\{Space.waitStable\}} que permite esperar la ejecución hasta que el espacio de búsqueda es estable, es decir en el momento que se puede empezar a asignar valores o dominios a las diferentes variables.
+\\\\
+Para realizar el proceso de cada uno de los distribuidores que han sido especificadas en la tabla \ref{table:esDistribucion} se hace uso de las restricciones reflejadas, que permiten imponer restricciones con respecto a la propagación de las variables. Por ejemplo, si el dominio tiene cierto tamaño o qué tantas variables han sido asignadas en una estructura de datos; estas restricciones presentan una salida binaria, 0 si se cumple o 1 si no se cumple.
+Gracias al uso de restricciones reificadas se puede hacer uso de ciclos, filtros y condicionales sin problema.
+
+\subsubsection{Generador de salidas XML}
+
+La salida se construye a partir de la información provista por la salida del proyecto que se encuentra en estructuras de datos propias de \textit{Mozart OZ} usando una librería conocida como \textit{VirtualString}.
+La construcción de la salida se realiza de acuerdo a lo especificado en la sección \ref{sec:formatSal} del presente documento. 

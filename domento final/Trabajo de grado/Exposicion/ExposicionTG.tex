@@ -1,0 +1,73 @@
+%@AUTHOR: Cardel
+%Configuracion del documento
+
+\documentclass{beamer}
+\usecolortheme[RGB={150,0,0}]{structure}
+\usetheme[height=7mm]{Rochester}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{ragged2e}
+\usepackage{colortbl}
+\usepackage{color}
+\definecolor{naranja}{rgb}{1,0.5,0} % valores de las componentes roja, verde y azul (RGB)
+\definecolor{rojo}{rgb}{1,0,0}
+\definecolor{SteelBlue}{rgb}{0.3,0.5,0.7}
+
+
+\author{Carlos Andr\'es Delgado S. Ing. } 
+\title{Presentaci\'on Trabajo de Grado}
+\subtitle{Diseño e implementación de una aplicaci\'on prototipo para la gestión del espectro radioel\'ectrico usando programaci\'on con restricciones}
+\institute{Facultad de Ingeniería. Universidad del Valle}
+\date{29 de Enero de 2013}
+%Transparencia
+\setbeamercovered{transparent}
+
+%LOGO Univalle
+\pgfdeclareimage[height=1.4cm]{logo}{imagenes/univalle}
+\logo{\pgfuseimage{logo}}
+
+%Para que en cada seccion aparezca la tabla de contenido
+\AtBeginSection[]{
+	\begin{frame}
+	\frametitle{Contenido}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+
+\begin{document}
+
+	\begin{frame}
+		\begin{tabular}{p{6.5cm}p{3cm}}
+			\includegraphics[height=0.22\textheight]{imagenes/avispalogo.png} & \includegraphics[height=0.32\textheight]{imagenes/sisteluv.jpg} 	\\
+		\end{tabular}
+		\titlepage	 
+		
+	\end{frame}
+	\begin{frame}
+ 		\frametitle{Contenido}
+		\tableofcontents[hideallsections]
+	\end{frame}
+	
+	%%Definición del problema
+	\input{1.DefinicionProblema/definicion.tex}
+	
+	%%Objetivos
+	\input{2.Objetivos/objetivos.tex}
+	
+	%%Solucion del problema
+	\section{Solución del problema}
+	
+	\input{3.Solucion/modelo}
+	\input{3.Solucion/implementacion}
+	\input{3.Solucion/aplicacion}
+	\input{3.Solucion/otrosmetodos}
+	
+	%%Pruebas
+	\input{4.Pruebas/pruebas}
+	
+	%%Conclusiones y trabajos futuros
+	\input{5.Final/conclusiones}
+	\input{5.Final/trabajosfuturos}
+
+\end{document}

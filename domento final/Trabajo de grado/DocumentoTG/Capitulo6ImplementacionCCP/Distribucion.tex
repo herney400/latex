@@ -1,0 +1,52 @@
+
+\section{Estrategias de distribución}
+
+Las estrategias de distribución están enfocadas a mejorar el rendimiento del algoritmo de búsqueda y están diseñadas para agilizar el proceso de gestión del espectro a partir de conocer las características propias de una banda específica. Por ejemplo, si esta se encuentra ocupada al inicio, lo más recomendable es intentar asignar al inicio, ya que la mejor solución de acuerdo a los costos definidos en el modelo buscan que los bloques libres sean lo más grandes posibles.\\
+
+Para definir las estrategias de distribución se crean las siguientes variables auxiliares:
+
+\begin{itemize}
+	\item $Req$ es la lista de requerimientos, es una lista de tuplas que contiene los elementos $(o_{i}, nr_{i})$ donde $o_{i}$ es el operador $i$ y $nr_{i}$ es el número de canales requeridos por el operador $i$.
+	\item $ReqA$: Es una sublista de $req$ que contiene los requerimientos correspondientes a los operadores que ya tienen asignación en la banda. Es decir que $o_{i} \in OPi \cap OPp$.
+	\item $NReqA$: Es una sublista de $req$ que contiene los requerimientos correspondientes a los operadores que no tienen asignación en la banda. Es decir que $o_{i} \in OPi \setminus OPp$.
+	\item $MayorReq$: es la lista de requerimientos ordenada de mayor a menor de acuerdo al número de canales solicitados por cada operador.
+	\item $MenorReq$: es la lista de requerimientos ordenada de menor a mayor de acuerdo al número de canales solicitados por cada operador.
+\end{itemize}
+
+
+En la tabla \ref{table:esDistribucion} se especifican los diferentes estrategias de distribución usados en el proyecto.
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{13.5cm}|}
+	\caption{Estrategias de distribución} \label{table:esDistribucion}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Descripción} \\
+	\hline
+	Asignar primero al inicio de la banda & Se toman los requerimientos $Req$ en orden de llegada, se toma el primer requerimiento y se intenta asignar en el primer canal de la banda, si no es posible en el segundo y así sucesivamente; una vez se ha cumplido el primer requerimiento se prosigue con el segundo hasta tomar todos los requerimientos.\\
+	\hline
+	Asignar primero al final de la banda & Se toman los requerimientos $Req$ en orden de llegada, se toma el primer requerimiento y se intenta asignar en el último canal de la banda, si no es posible en el penúltimo y así sucesivamente; una vez se ha cumplido el primer requerimiento se prosigue con el segundo hasta tomar todos los requerimientos.\\
+	\hline
+	Asignar primero a operadores en orden de llegada con asignación al inicio de la banda &  Se intenta asignar canales al inicio de la banda a la lista de requerimientos $ReqA$ y luego a $NReqA$.\\
+	\hline
+	Asignar primero a operadores en orden de llegada con asignación al final de la banda &  En este caso se asignar canales al final de la banda a la lista de requerimientos $ReqA$ y luego a $NReqA$.\\
+	\hline
+	Asignar primero a operadores sin asignación al inicio de la banda & En este caso se asignar canales al inicio de la banda a la lista de requerimientos $NReqA$ y luego a $ReqA$.\\
+	\hline
+	Asignar primero a operadores sin asignación al final de la banda & En este caso se asignar canales al final de la banda a la lista de requerimientos $NReqA$ y luego a $ReqA$.\\
+	\hline
+	Asignar primero a requerimientos más grandes al inicio de la banda & A partir de $MayorReq$ se realiza el proceso de asignación intentado asignar a partir del inicio de la banda.\\
+	\hline
+	Asignar primero a requerimientos más grandes al final de la banda & A partir de $MayorReq$ se realiza el proceso de asignación intentado asignar a partir del final de la banda.\\
+	\hline
+	Asignar primero a requerimientos más pequeños al inicio de la banda & A partir de $MenorReq$ se realiza el proceso de asignación intentado asignar a partir del inicio de la banda.\\
+	\hline
+	Asignar primero a requerimientos más pequeños al final de la banda & A partir de $MenorReq$ se realiza el proceso de asignación intentado asignar a partir del final de la banda.\\
+	\hline
+	Estrategia genérica: ff & Intenta asignar la primera variable de la lista, donde el domino es más pequeño, por el menor valor del dominio es decir 0.\\
+	\hline
+	Estrategia genérica: naive  & Intenta asignar la primera variable de la lista, por el menor valor del dominio es decir 0.\\
+	\hline
+	Estrategia genérica: split  & Intenta asignar la primera variable de la lista, por el valor medio del dominio es decir 1.\\
+	\hline
+\end{longtable}	
+\end{center}

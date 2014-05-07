@@ -1,0 +1,32 @@
+\section{Conclusiones}
+\begin{enumerate}
+	\item El problema de asignación de canales o frecuencias fue estudiado en base al problema de \textit{channel assigment} y en las consideraciones que se encuentran en el cuadro nacional de atribución de frecuencias de Colombia, quienes permitieron abstraer el problema de tal forma que se pudiera escribir en un modelo lineal, en el cual se pudieran abstraer las restricciones más importantes que se deben tomar en cuenta en éste proceso.
+	\item El uso de modelo lineal permite realizar un proceso de implementación transparente ya que no se requirieron funciones propias de un lenguaje, lo que facilita su expansión a diferentes métodos de solución, como fue en este caso, que se diseñaron dos aplicativos, uno basado en programación por restricciones y otro basado en algoritmos evolutivos.
+	\item La metodología del grupo AVISPA para aplicaciones por restricciones permitió seguir una serie de pasos, para convertir en un servicio Web la aplicación creada en lenguaje \textit{Mozart OZ}; así mismo se pudo usar con algunos cambios en otro paradigma de programación que en el proyecto fueron los algoritmos genéticos.
+	\item El uso del paradigma de programación por restricciones en el análisis comparativo permitió establecer que es el método más apropiado para solucionar el problema en instancias que cumplan las restricciones, debido a que se puede obtener una solución válida y con un costo cercano al óptimo rápidamente a diferencia del método del algoritmo evolutivo que tiene una convergencia bastante lenta.
+	\item La implementación sobre un algoritmo genético demostró ser una buena experiencia para estudiar las ventajas y desventajas que tiene un método de solución de este tipo de problemas frente a otro; además permite tener el usuario un punto de comparación sobre las posibles soluciones que puede tomar una instancia del problema.
+	\item El uso de estrategias de distribución diseñadas para el proyecto permite acelerar las búsquedas de soluciones válidas al problema frente a estrategias genéricas, sin embargo son más costosas en recursos, debido a que que la implementación y su concepción no considera aspectos de agilidad y de ahorro de recursos.
+	\item Los resultados permitieron establecer algunas pautas sobre qué estrategias de búsqueda y motores de búsqueda presentan mejor rendimiento frente a los otros tomando como base una forma conocida de la entrada. Sin embargo, en la mayoría de casos no se encuentra mejora en rendimiento comparando un propagador con otro en entradas cuya forma no corresponde a las formas conocidas que se establecieron a lo largo del proyecto.
+	\item La gran ventaja del paradigma de programación por restricciones frente a otros métodos es lo rápido que se encuentra una solución válida a una instancia dada, sin ser afectado en gran medida por el tamaño de la entrada, sin embargo la búsqueda de soluciones óptimas es el punto débil del proceso que se ha realizado en éste proyecto, ya que por la alta complejidad que pueden tomar las instancias no es posible encontrar fácilmente un método que permita guiar la búsqueda hacia la solución óptima.
+	\item Las pruebas realizadas han arrojado que el uso de un motor de búsqueda aumenta sensiblemente el numero de propagadores y dominios finitos requeridos, ya que con éste se busca obtener la mejor solución bajo unos criterios definidos. Para entradas grandes resulta bastante costoso el uso de estos motores, por lo que, buscar la solución óptima en instancias grandes del problema puede ser un proceso bastante complicado, que requiere una gran capacidad de procesamiento.
+	\item En las pruebas se encontró que la restricción que más efecto produce en el rendimiento es la de asignación pues afecta sensiblemente los parámetros de ejecución, ya que a medida que la banda se encuentra más ocupada el número de propagadores y variables de estado finitos necesarias para realizar la búsqueda de soluciones se reduce considerablemente.
+	\item Se pudo establecer que la solución implementada en éste proyecto queda sujeta a algunas limitaciones computacionales, como son el tamaño de la entrada y el tamaño de los requerimientos, si son muy grandes el aplicativo puede fallar y no mostrarse soluciones a una instancia.
+	\item Como resultado final de las pruebas realizadas y del estudio del proceso de diseño e implementación, se puede establecer que la propuesta presentada en éste proyecto es un acercamiento a un proceso basado en programación por restricciones que permita solucionar éste problema. Se debe tomar en cuenta muchos más aspectos que están relacionados en el proceso de gestión del espectro, como son las asignaciones en detalle, el uso de datos reales y poder procesar entradas de gran tamaño sin presentar problemas en el aplicativo. Como aporte de éste proyecto se tiene una experiencia o acercamiento que permite tener una base para construir una propuesta que tenga como producto final un aplicativo para realizar el proceso de gestión del espectro usando el paradigma de programación por restricciones y pueda ser usado como un aplicativo Web.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

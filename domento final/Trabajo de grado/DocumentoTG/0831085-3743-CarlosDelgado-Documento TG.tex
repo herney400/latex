@@ -1,0 +1,317 @@
+\documentclass[letterpaper, 11pt, oneside]{book}
+\usepackage[utf8]{inputenc} %Para configuración de caracteres
+\usepackage[spanish]{babel} %Para configuración de idioma
+\usepackage{float} %Para que funcionen las tablas
+\usepackage{anysize} %Para usar márgenes
+\marginsize{2cm}{2cm}{1cm}{2cm} %{izquierda}{derecha}{arriba}{abajo}. La superior esta sobre 1, la derecha sobre -0.5 y la de abajo sobre 2 (por el número de página)
+%tablas
+\usepackage{fancyhdr}
+%tablas
+\usepackage{booktabs}
+\usepackage{longtable}
+%rotar tablas (y usar \includegraphics )
+\usepackage{rotating}
+%Dividir en diagonal
+%\usepackage{slashbox}
+%color tablas
+\usepackage{colortbl}
+%colocar tabla en lugar de cuadro
+ 
+\usepackage[numbib,notlof,notlot,nottoc]{tocbibind} %Para que la biliografía se llame así y no referencias y para que quede numerada como sección.
+%\usepackage[notlof,notlot,nottoc]{tocbibind} %Bibliografía sin numerar
+
+\bibliographystyle{ieeetr} %Estilo de bibliografía IEEE
+
+\usepackage{url} % inserción url's notas de pie.
+
+%Para poder colocar texto en color
+\usepackage{color}
+\definecolor{naranja}{rgb}{1,0.5,0} % valores de las componentes roja, verde y azul (RGB)
+\definecolor{rojo}{rgb}{1,0,0}
+\definecolor{SteelBlue}{rgb}{0.3,0.5,0.7}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+\definecolor{claregreen}{RGB}{4,180,95}
+\usepackage{listingsutf8}
+\lstset{ %
+  basicstyle=\footnotesize,           % the size of the fonts that are used for the code
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                   % show the filename of files included with \lstinputlisting;{}
+  extendedchars=false,
+  inputencoding=utf8, 
+}
+
+\lstdefinelanguage{XML}
+{
+  basicstyle=\tiny,           % the size of the fonts that are used for the code
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  morestring=[b]",
+  morestring=[s]{(}{)},
+  morecomment=[s]{<!-- }{-->},
+  stringstyle=\color{claregreen},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan}\bfseries,
+  morekeywords={xmlns,version,type, encoding, xml, DOCTYPE,SYSTEM,
+ELEMENT, ATTLIST, id, stylesheet, href},% list your attributes here
+  emph={REQUIRED},
+  emphstyle=\color{red}
+}
+
+
+
+
+
+%Para tener los bookmarks del pdf (menú al lado derecho en los visualizadores de pdf)
+% si colorlinks= true, no salen las cajas, sino el color del link!!
+% linkcolor para los indices, citecolor para las citas en texto, urlcolor para los enlaces
+\usepackage[pdftex,bookmarks=true, linkcolor=black, citecolor=black, colorlinks=true, urlcolor=black]{hyperref}
+
+%Para poder hacer subfiguras (subfloat)
+\usepackage{subfig}
+
+\usepackage{enumitem} % Para poder continuar enumerate en otras partes
+
+\usepackage{pdflscape}%Para colocar páginas horizontales en el PDF
+\usepackage{multicol}
+\begin{document}
+	
+\renewcommand{\tablename}{Tabla}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Portada%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Capitulo0/Portada}
+%Portada
+\portada
+%Contraportada
+\contraportada
+\renewcommand{\thepage}{\roman{page}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Jurados%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Capitulo0/Jurados}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Agradecimientos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Capitulo0/Agradecimientos}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Tabla de contenido%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\contentsname}{Tabla de Contenido}
+\tableofcontents
+
+\renewcommand{\listfigurename}{Lista de Figuras}
+\listoffigures 
+
+\renewcommand{\listtablename}{Lista de tablas}
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Resumen%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Resumen}
+\input{Capitulo0/Resumen}
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Introducción%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Introducción}
+\input{Capitulo0/Introduccion}
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Capitulo UNO: Contexto y objetivos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Contexto y objetivos}
+\markboth{Contexto y objetivos}{Contexto y objetivos}
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Formulación del problema%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo1ContextoYObjetivos/Formulacion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Objetivos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo1ContextoYObjetivos/Objetivos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Antecedentes%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo1ContextoYObjetivos/Antecedentes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Justificación%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo1ContextoYObjetivos/Justificacion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Información sobre los capitulos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo1ContextoYObjetivos/Informacion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Capitulo DOS: Marco teórico%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter[Marco teórico]{Marco teórico}
+\markboth{Marco teórico}{Marco teórico}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Introduccion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo2MarcoTeorico/IntroCap2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Terminos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo2MarcoTeorico/Terminos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%GestionDelEspectro%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo2MarcoTeorico/GestionEspectro}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ProgramacionPorRestricciones%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo2MarcoTeorico/CCP}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Capitulo TRES: Alcances%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Alcances de la propuesta}\label{cap3}
+\input{Capitulo3Alcance/Alcances} 
+\markboth{Alcances de la propuesta}{Alcances de la propuesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Capitulo CUATRO: Modelo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Modelo de agente inteligente para predecir precio y consumo de energía eléctrica basado en redes neuronales}
+\markboth{Modelo de agente inteligente para predecir precio y consumo de energía eléctrica basado en redes neuronales}{Modelo de agente inteligente para predecir precio y consumo de energía eléctrica basado en redes neuronales}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Especificación del modelo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo4Modelo/Modelo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Cálculo de costos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo4Modelo/Costos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Justificacion Modelo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo4Modelo/JustificacionModelo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Capitulo CINCO: Implementacion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Consideraciones para implementación del modelo} \label{capimp}
+\markboth{Consideraciones para implementación del modelo}{Consideraciones para implementación del modelo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Introducion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo5Implementacion/implementacion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Formatos E/S%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo5Implementacion/formatoEntrada}
+\input{Capitulo5Implementacion/formatoSalida}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Parametros aplicacion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo5Implementacion/parametros}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Base de datos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo5Implementacion/baseDeDatos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Capitulo SEIS: Implementacion CPP%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Implementación del modelo usando programación por restricciones}\label{cap5}
+\markboth{Implementación del modelo usando programación por restricciones}{Implementación del modelo usando programación por restricciones}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Introduccion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo6ImplementacionCCP/IntroCap6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Estrategias distribución%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo6ImplementacionCCP/Distribucion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Estrategias búsqueda%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo6ImplementacionCCP/Busqueda}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Debilidad y flexibilidad%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo6ImplementacionCCP/DeyFeRestricciones}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Aplicativo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo6ImplementacionCCP/Aplicativo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Anotaciones%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo6ImplementacionCCP/Anotaciones}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Capitulo SIETE: Implementacion Genetico%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Implementación del modelo usando un algoritmo genético} \label{cap6}
+\markboth{Implementación del modelo usando un algoritmo genético}{Implementación del modelo usando un algoritmo genético}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Introduccion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo7ImplementacionGenetico/IntroCap7}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%El algoritmo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo7ImplementacionGenetico/Genetico}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Aplicación%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo7ImplementacionGenetico/Aplicacion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Capitulo OCHO: Interfaces Web%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Interfaces Web de la aplicación}\label{cap7}
+\markboth{Interfaces Web de la aplicación}{Interfaces Web de la aplicación}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Introduccion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo8InterfacesWeb/IntroCap8}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Estructura%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo8InterfacesWeb/EstructuraApp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Despliegue%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo8InterfacesWeb/DespliegueResultados}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Experimentación y pruebas%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Experimentación y pruebas}\label{capexp}
+\markboth{Experimentación y pruebas}{Experimentación y pruebas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Introduccion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo9Pruebas/IntroCap9}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Descripción%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo9Pruebas/DescripcionPruebas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PruebasCPP%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo9Pruebas/PruebasCPP}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Pruebas Genetico%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo9Pruebas/PruebasGenetico}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Resultados encontrados%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Capitulo9Pruebas/ResultadosEncontrados}
+
+
+\chapter{Conclusiones y trabajos futuros}
+\markboth{Conclusiones y trabajos futuros}{Conclusiones y trabajos futuros}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Conclusiones%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Final/Conclusiones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Trabajos futuros%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Final/TrabajosFuturos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BIBLIOGRAFIA%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{Bibliografia}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ANEXOS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Anexos}
+\addcontentsline{toc}{chapter}{Anexos}
+\markboth{Anexos}{Anexos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Entrada ejemplo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Anexos/anexoEntradaEjemplo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Salida ejemplo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Anexos/anexoSalidaEjemplo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Aplicativo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Anexos/AnexoDiagramaFlujo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Modelo base de datos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Anexos/anexoModeloER}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Entrada ejemplo genetico&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Anexos/anexoEntradaGenetico}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Manuales de usuario%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Anexos/anexoManualesDeUsuario}
+
+\end{document}

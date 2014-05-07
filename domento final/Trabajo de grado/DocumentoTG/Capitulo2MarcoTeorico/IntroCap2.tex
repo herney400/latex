@@ -1,0 +1,77 @@
+Para establecer los lineamientos del prototipo de software a realizar, es necesario definir los elementos teóricos con el fin de dar soporte al usuario respecto a conceptos y etapas de desarrollo. A continuación se da a conocer las definiciones y principales características que se tuvieron en cuenta para el desarrollo del proyecto de grado:
+\\\\
+Es recomendado que el lector tenga formación básica en:
+
+\begin{itemize}
+	\item {Conceptos de minería de datos:
+		\begin{itemize}
+			\item Descubrimiento de conocimiento en bases de datos.
+			\item Inteligencia de negocio.
+			\item extracción, transformación y carga de datos.
+		\end{itemize}
+	}	
+	
+	\item {Conceptos de redes neuronales:
+		\begin{itemize}
+			\item Tipos de redes neuronales.
+			\item Tipos de aprendizaje (supervisado y no supervisado) y algoritmos de Entrenamiento. 		
+		    \item Función de transferencia.
+		    \item Reglas de aprendizaje.
+		    \item Conceptos biológicos de lo qué es una red neuronal.	
+		    
+		\end{itemize}
+	}
+	\item Conocimiento sobre ingeniería de software.
+	\item Conocimiento sobre diagramas Lenguaje Unificado de Modelado \textbf{(UML)} .
+	\item Claridad en el concepto de modelo matemático.
+	\item Información acerca de la diferencia entre aplicaciones de escritorio y Web.
+\end{itemize}
+
+A continuación se ilustran los términos más relevantes para el proyecto de grado respecto de agentes basado en redes neuronales artificiales \textbf{(RNA)}.
+\section{Modelo de agentes basado en redes neuronales artificiales \textbf{(RNA)}}
+
+El modelado de agentes basado en Redes Neuronales constituye una metodología especialmente interesante. Debido a que la tarea a realizar tiene manejo de grandes cantidades de datos, se tuvo en cuenta para el diseño del agente, la metodología de redes neuronales, ya que estas pueden utilizarse por sus cualidades naturales para tratar con presencia de ruidos e incompletitud en los datos de entrada” Kohonen
+\\\\
+Una red neuronal es capaz de particionar los datos de entrada en un conjunto de cluster basado en un criterio de similitud [Freeman4, Rasmussen5, Skapura6, Wasserman7], también han mostrado proveer modelos útiles para problemas que requieren clasificación en dos o más categorías, en el trabajo que nos compete la idea  de utilizar redes neuronales como una serie de agentes inteligentes que en conjunto conforman un sistema integral de apoyo a la toma de decisiones.
+\\\\
+\begin{itemize}
+\item {Entre las técnicas de minería de datos se encuentran las siguientes:
+		\begin{itemize}
+			\item Redes neuronales artificiales.
+			\item Arboles de decisión. 
+			\item Algoritmos genéticos.
+			\item Modelos lineales.
+			\item Vecino más cercano.	
+		\end{itemize}
+	}
+\end{itemize}	
+Dado que el núcleo del prototipo a implementar, necesita agentes inteligentes capaces de tomar decisiones partiendo de un conocimiento previo obtenido a través de datos históricos, se escogió de las anteriores técnicas las Redes Neuronales Artificiales (RNA) por su capacidad de detectar y aprender patrones y características de los datos, una vez entrenadas pueden hacer previsiones, clasificaciones y segmentación.
+\\\\
+Si bien un conjunto de redes neuronales cumple con ciertas características, a continuación se expresan algunas que cumplen como agente inteligente:
+\\
+    \begin{itemize}
+			\item \textbf{Información contextual:} dado que el conocimiento está representado en la red neuronal. Cada neurona en la red está afectada por cualquier actividad global del resto de las neuronas.  
+\item \textbf{Inferencia:}una red neuronal, a diferencia  de los modelos conocidos,   utiliza los datos para crear mapas entre las entradas y las salidas de la red.
+			\item \textbf{ Generalización:}el conjunto de datos de entrenamiento hace que las redes neuronales bien entrenadas pronostiquen de manera satisfactoria desde nuevos conjuntos de datos.
+			\item \textbf{ Paralelismo:} cada neurona conectada a través de la red tiene capacidad de procesamiento distribuido de la información contando también con memoria local en cada neurona.			
+    \end{itemize}
+    
+El funcionamiento de un algoritmo de Red Neuronal Artificial básicamente consta de tres niveles:    
+
+\begin{itemize}
+			\item \textbf{Nivel de entrada:}las neuronas de entrada definen todos los valores de atributos de entrada para el modelo de minería de datos, así como sus probabilidades. [8]  
+			\item \textbf{•	Nivel oculto:} las neuronas ocultas reciben entradas de las neuronas de entrada y proporcionan salidas a las neuronas de salida. El nivel oculto es donde se asignan pesos a las distintas probabilidades de las entradas. Un peso describe la relevancia o importancia de una entrada determinada para la neurona oculta. Cuanto mayor sea el peso asignado a una entrada, más importante será el valor de dicha entrada. Los pesos pueden ser negativos, lo que significa que la entrada puede desactivar, en lugar de activar, un resultado concreto. [8]
+			\item \textbf{•	Nivel de salida: } las neuronas de salida representan valores de atributo de predicción para el modelo de minería de datos. [8]
+		 
+		\end{itemize}
+		
+A continuación se muestra algunos ejemplos de agentes basado en redes neuronales.
+\\\\
+\textbf{ QUERANDO! Un Agente de Filtrado de Documentos Web:} dicho artículo “describe un agente de filtrado de páginas web llamado Querando! Capaz de aprender perfiles representativos de las preferencias del usuario, a través de una red neuronal basada en Resonancia Adaptativa Difusa”. [Gómez, Lanzarini 9].
+\\\\
+\textbf{GRAIL: A Multi-Agent Neural Network System for Gene Identificatión:} sistema multiagente basado en redes neuronales como múltiples sensores para la identificación de genes 
+\textbf{An artificial neural network based dynamic controller for a robot in a multi-agent system:} este artículo propone el modelamiento y simulación de una red neuronal computarizada para controlar la trayectoria de un robot en un sistema de futbol de robots multiagente. 
+\\\\
+\textbf{Control de un agente inteligente mediante Redes Neuronales en el entorno del videojuego UT2004:}  el objetivo de este trabajo es obtener agentes sintéticos para videojuegos de acción en primera persona de forma que su comportamiento no sea definido directamente por el programador, sino que estos sean capaces de adquirirlo mediante aprendizaje automático. Para ello se ha optado por una estrategia de aprendizaje basada en redes neuronales recurrentes de tiempo continuo. [Moreno 12]
+Multi-agent market modeling based on neural networks
+		

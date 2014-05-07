@@ -1,0 +1,31 @@
+\section{Debilidad y flexibilidad de restricciones}
+
+Existen algunas instancias del problema que no cumplen una o más restricciones, por lo tanto, se diseñan estrategias de flexibilidad y debilidad de restricciones para realizar su procesamiento.
+
+\subsection{Restricciones flexibles}
+
+La flexibilidad en las restricciones consiste en que algunas entradas del problema toman valores que deshabilitan el efecto de una o más restricciones del problema.
+
+\subsubsection{No considerar tope}
+
+En este caso $Tope=C$, se fuerza a que el tope máximo de cada operador sea el número de canales de la banda.
+
+\subsubsection{No considerar separación entre canales}
+
+En este caso $Sep=0$, es decir que la separación entre canales de operadores diferentes es cero.
+
+\subsubsection{Frecuencias asignadas a operadores con requerimientos se pueden mover}
+
+Se toma $CAC = 0$, lo que evita que se conserva la asignación de los operadores que solicitan canales.
+
+\subsubsection{Más de un operador por canal}
+
+Se cumple $R>1$, en este caso también $Sep=0$, ya que no tiene sentido considerar separación en un caso donde varios operadores pueden compartir un canal.
+
+\subsection{Debilidad de restricciones}
+
+La estrategia utilizada en el proyecto para manejar fortaleza y debilidad de las restricciones, consiste en permitir al usuario elegir que restricciones son flexibles, en seis posibles iteraciones.
+\\\\
+Cada iteración es independiente de las otras. El usuario define qué restricciones flexibiliza en cada una de ellas y a partir de los resultados de cada una elige cuál tomar como solución final. 
+\\\\
+Las iteraciones en el aplicativo se ejecutan al mismo tiempo debido a que son independientes entre sí y los resultados de cada una son desplegados al usuario.

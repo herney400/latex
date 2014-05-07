@@ -1,0 +1,65 @@
+\section{Formato de entradas} 
+
+A continuación se va definir el formato de las entradas para los aplicativos del proyecto, un ejemplo de entrada puede ser consultado en el anexo entradas de ejemplo ubicado en la página \pageref{ejemploEntrada}.
+
+\subsection{Formato general}
+Para las entradas se utiliza el formato XML usando la especificación \textit{dict} de XCSP\cite{XCSP}.
+\\\\
+Para definir una entrada de acuerdo al formato \textit{dict}, se debe asociar un orden convencional a un diccionario. Este orden convencional especifica un orden de llaves que pueden ser usadas para acortar notaciones. Mientras el grupo de llaves pueda ser conocido desde el contexto, los valores de cada llave pueden ser escritos en una notación abreviada, listando los valores de cada llave que son conocidas en el diccionario.
+\\\\
+Por ejemplo, las coordenadas de un punto pueden ser representadas por un diccionario que contiene dos llaves $x$ e $y$ con valores (2,5) respectivamente.
+
+\lstset{frameround=fttt}
+\begin{lstlisting}[frame=trBL, language=XML]
+<dict>
+<entry key="x"><i>2</i></entry>
+<entry key="y"><i>5</i></entry>
+</dict>
+\end{lstlisting}
+\subsection{Especificación de llaves}
+Para el proyecto se han definido las siguientes llaves:
+
+\begin{center}
+\begin{longtable}{|p{7cm}|p{9cm}|}
+	\caption{Estructura de llaves en las entradas}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Llave} & \cellcolor[gray]{0.9}\textbf{Descripción} \\
+	\hline
+	GeograficAssignationType & Tipo de asignación geográfica, 0 indica nacional, 1 territorial o regional, 2 departamental y 3 municipal.\\
+	\hline
+	GeograficAssignationID & ID o llave de la entidad territorial, en el caso de asignación nacional este valor es 0.\\
+	\hline
+	FrequencyBand & ID o llave banda de frecuencia de trabajo. \\
+	\hline
+	FrequencyRank & ID o llave del rango de frecuencia o banda específica de trabajo.\\
+	\hline
+	NumberChannels & Número de canales que tiene la canalización del rango de frecuencia.\\
+	\hline
+	NumberPresentOperators & Número de operadores que tienen asignación actualmente en el rango de frecuencia.\\
+	\hline
+	NumberOfOperatorWithRequirements & Número de operadores que requieren asignación.\\
+	\hline
+	ChannelSeparation & Separación mínima de canales entre dos operadores diferentes.\\
+	\hline
+	PresentOperators & Lista de operadores que tienen asignación en la banda actualmente.\\
+	\hline
+	OperatorsWithRequeriments & Lista de operadores que requieren asignación.\\
+	\hline
+	Requeriments & Lista de los requerimientos en canales que tienen los operadores que requieren asignación.\\
+	\hline
+	MaxAssignationsSubDivision & Lista que indica el máximo número de canales que tiene asignado en una división del área geográfica cada operador que solicita asignación.\\
+	\hline
+	ChannelAssignInDivisions & Indica que canales están asignados en las divisiones del área geográfica.\\
+	\hline
+	ReservedChannels & Indica que canales están reservados en las divisiones del área geográfica.\\
+	\hline
+	DisabledChannels & Indica que canales están deshabilitados en las divisiones del área geográfica.\\
+	\hline
+	ChannelAssignation & Matriz que especifica la asignación actual para los operadores presentes.\\
+	\hline
+	MaxChannelAssignationByOperator & Indica el máximo número de canales que puede tener asignado un operador en la banda.\\
+	\hline
+\end{longtable}	
+\end{center}
+
+

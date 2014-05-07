@@ -1,0 +1,121 @@
+\section{Descripción pruebas}
+
+\subsection{Entradas de prueba}
+
+Para probar diferentes escenarios en la gestión del espectro, se tienen los tipos de entradas que son definidos en la tabla \ref{tabla:parametrosPruebas}
+
+\begin{center}
+\begin{longtable}{|p{2cm}|p{2cm}|p{12.5cm}|}
+	\caption{Entradas usadas para pruebas} \label{tabla:parametrosPruebas}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Código} & \cellcolor[gray]{0.9}\textbf{Número canales} & \cellcolor[gray]{0.9}\textbf{Descripción} \\
+	\hline
+	E1 & 53 & Banda 22000-22853 kHz, Sin asignación, Tope:10, requerimientos: 3 operadores 2 canales cada uno.\\
+	\hline
+	E2 & 53 &Banda 22000-22853 kHz,  Sin asignación, Tope:10, requerimientos, 3 operadores: 10 canales cada uno. \\
+	\hline
+	E3 & 53 &Banda 22000-22853 kHz,  10 canales asignados al inicio de la banda, Tope:10, requerimientos, 3 operadores: 10 canales cada uno. \\
+	\hline
+	E4 & 53 &Banda 22000-22853 kHz,  10 canales asignados al final de la banda, Tope:10, requerimientos, 3 operadores: 10 canales cada uno. \\
+	\hline
+	E5 & 53 &Banda 22000-22853 kHz,  10 canales asignados en la mitad de la banda, Tope:10, requerimientos, 3 operadores: 10 canales cada uno. \\
+	\hline
+	E6 & 53 &Banda 22000-22853 kHz,  10 canales asignados aleatoriamente, Tope:10, requerimientos, 3 operadores: 10 canales cada uno. \\
+	\hline
+	E7 & 480 &Banda 254-260 MHz,  Sin asignación, Tope:10, requerimientos, 2 operadores: 8 canales cada uno. \\
+	\hline
+	E8 & 480 &Banda 254-260 MHz,  Sin asignación, Tope:10, requerimientos, 4 operadores: 8 canales cada uno. \\	
+	\hline
+	E9 & 480 &Banda 254-260 MHz,  Sin asignación, Tope:10, requerimientos, 6 operadores: 8 canales cada uno. \\	
+	\hline
+	E10 & 480 &Banda 254-260 MHz,  Sin asignación, Tope:10, requerimientos, 8 operadores: 8 canales cada uno. \\	
+	\hline
+	E11 & 480 &Banda 254-260 MHz,  Sin asignación, Tope:10, 10 operadores: requerimientos (8,4,1,3,2,10,8,7,4,1). \\	
+	\hline
+	E12 & 480 &Banda 254-260 MHz,  Sin asignación, Tope:10, 20 operadores: requerimientos (8,4,1,3,2,10,8,7,4,1,3,8,8,8,4,6,2,8,9,10). \\
+	\hline
+	E13 & 813 & Banda800Mhz,  Asignación variada, en divisiones y otros operadores, Tope:80, requerimientos, 10 operadores 8 canales cada uno\\	
+	\hline
+	E14 & 813 & Banda800Mhz,  Asignación variada, en divisiones y otros operadores, Tope:80, requerimientos, 10 operadores (13,24,15,6,14,29,1,12,3,23)\\
+	\hline
+	E15 & 813 & Banda800Mhz,  Asignación variada, en divisiones y otros operadores, Tope:80, requerimientos, 20 operadores 20 canales cada uno\\	
+	\hline
+	F1 & 53 & Banda 22000-22853 kHz, Sin asignación, Tope:10, requerimientos: 3 operadores 13 canales cada uno.\\
+	\hline
+	F2 & 53 & Banda 22000-22853 kHz, Sin asignación, Tope:10, requerimientos: 6 operadores 10 canales cada uno.\\
+	\hline
+	F3 & 53 & Banda 22000-22853 kHz, Sin asignación, Tope:10, requerimientos: 6 operadores 13 canales cada uno.\\
+	\hline
+\end{longtable}	
+\end{center}
+
+Las entradas han sido creadas para estudiar varios casos que se pueden presentar en la asignación:
+
+\begin{itemize}
+	\item En las entradas E1 a E5 se estudia las implicaciones de asignación del problema en una banda pequeña, tomando en cuenta la forma en que está asignada.
+	\item Las entradas E7 a E12 permiten estudiar el comportamiento ante requerimientos, de tamaño y si son homogéneos (todos piden lo mismo) y heterogéneos en una banda no asignada.
+	\item Las entradas E1, E7 y E13 permiten comparar el funcionamiento del aplicativo ante diferentes tamaños de entrada en condiciones similares.
+	\item Para las entradas E13 a E15 las asignaciones son: operadores en la banda 140 canales y operadores en divisiones 11 canales
+	\item Las entradas F1, F2 y F3 no cumplen requerimientos. F1 no cumple tope, F2 los requerimientos sobrepasa la capacidad de la banda y F3 los requerimientos superan tope y capacidad de banda.
+\end{itemize}
+
+Las entradas, se clasican así:
+
+\begin{itemize}
+	\item \textbf{Pequeñas:} Si son generadas a partir de rangos de frecuencia con menos de 20 canales.
+	\item \textbf{Medianas:} Si son generadas a partir de rangos de frecuencia entre 20 y 100 canales.
+	\item \textbf{Grandes:} Si son generadas a partir de rangos de frecuencia con más de 100 canales.
+\end{itemize}
+
+\subsection{Procedimiento de pruebas}
+
+Para realizar las pruebas en los aplicativos se establecen algunas pautas para permitir la recolección de datos y los análisis posteriores.
+
+\subsubsection{Codificación parámetros de pruebas}
+
+Los parámetros de desempeño y su respectiva codificación son los siguientes:
+
+\begin{itemize}
+	\item \textbf{Ns}: Número de soluciones.
+	\item \textbf{Ec}: Espacios de computación creados.
+	\item \textbf{Nv}: Número de variables de dominios finitos.
+	\item \textbf{Np}: Número de propagadores.
+	\item \textbf{Um}: Uso de memoria (Bytes).
+	\item \textbf{Mc}: Mejor costo solución encontrada.
+\end{itemize}
+
+\textbf{Importante:} Para el caso de las pruebas con el algoritmo genético sólo se toma en cuenta el costo de la mejor solución encontrada, debido a que los otros parámetros por las diferencias de ambos métodos no se pueden comparar.
+\\\\
+Los diferentes motores de búsqueda se codifican así:
+
+\begin{itemize}
+	\item \textbf{CT}: Mejor costo total.
+	\item \textbf{C1}: Mejor por tamaño de bloque libre.
+	\item \textbf{C2}: Mejor por número de bloques de asignados.
+	\item \textbf{C3}: Mejor por número de canales inutilizables.
+\end{itemize}
+
+La codificación para las estrategias de distribución es:
+
+\begin{itemize}
+	\item \textbf{S1}: Asignar primero al inicio de la banda.
+	\item \textbf{S2}: Asignar primero al final de la banda.
+	\item \textbf{S3}: Asignar primero al inicio de la banda a operadores con asignación.
+	\item \textbf{S4}: Asignar primero al final de la banda a operadores con asignación.
+	\item \textbf{S5}: Asignar primero al inicio de la banda a operadores sin asignación.
+	\item \textbf{S6}: Asignar primero al final de la banda a operadores sin asignación.
+	\item \textbf{S7}: Asignar primero al inicio de la banda a operadores con mayores requerimientos.
+	\item \textbf{S8}: Asignar primero al final de la banda a operadores con mayores requerimientos.
+	\item \textbf{S9}: Asignar primero al inicio de la banda a operadores con menores requerimientos.
+	\item \textbf{S10}: Asignar primero al final de la banda a operadores con menores requerimientos.
+	\item \textbf{SG1}: Genérica: Naive.
+	\item \textbf{SG2}: Genérica: ff.
+	\item \textbf{SG3}: Genérica: split.
+\end{itemize}
+
+\subsubsection{Procedimiento de pruebas}
+
+Para las pruebas se trata de probar los diferentes parámetros de la aplicación, variando cada característica manteniendo las otras estáticas para facilitar el análisis de cada una de ellas y su influencia en el cálculo de la solución a una instancia del problema.
+\\\\
+Es importante aclarar que una solución no se marca como \textbf{óptima} hasta que se termine de explorar el árbol de búsqueda por completo.
+

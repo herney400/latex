@@ -1,0 +1,21 @@
+\section{Trabajos futuros}
+\begin{enumerate}
+	\item El modelo implementado en el proyecto no garantiza obtener una solución óptima a nivel de detalle de asignación, ya que no se consideran las asignaciones particulares de cada una de las divisiones territoriales de una zona geográfica donde se desee realizar el proceso de asignación de canales. Se debe a futuro considerar cambios al modelo y a la implementación que posibiliten estudiar la asignación en todo su detalle.
+	\item Se requiere estudiar un modelo que considere las posiciones y características de los transmisores de un operador en determinada área geográfica, esto para incluir en el modelo aspectos de propagación y calidad de servicio en el proceso de gestión del espectro.
+	\item Se deben considerar aspectos técnicos del proceso de la gestión del espectro, en especial la recomendación ITU K52, que trata los aspectos sobre niveles de radiación producto de emisiones electromagnéticas que deben respetarse para evitar efectos negativos en los seres humanos.
+	\item El proyecto fue realizado utilizando datos que fueron diseñados para realizar pruebas en el aplicativo pero que no corresponden a la realidad. Para poder estudiar el problema más a fondo se requieren datos reales, los cuales lamentablemente no se encuentran accesibles al público en general.
+	\item En las pruebas se encontró que el aplicativo basado en \textit{Mozart OZ} presenta problemas en entradas grandes, por lo que se debe estudiar como superar éste problema desde el diseño de la aplicación o utilizar otras opciones de implementación que no dependen de una máquina virtual, como es el caso de \textit{Gecode} que es una librería de programación por restricciones para C++.
+	\item Debido a que se necesita una gran capacidad de procesamiento en instancias grandes del problema, se recomienda realizar un estudio posterior sobre qué cambios se deben realizar al modelo, a la estrategia de implementación y la forma de implementación, para que en la ejecución se pueda realizar una distribución del proceso en varios nodos de cómputo de tal forma que se pueda procesar una gran carga computacional sin depender de las capacidades de una infraestructura computacional que de soporte al aplicativo.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+

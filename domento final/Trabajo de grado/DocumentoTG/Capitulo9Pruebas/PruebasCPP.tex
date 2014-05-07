@@ -1,0 +1,676 @@
+\section{Pruebas sobre aplicativo basado en programación por restricciones}
+
+\subsection{Pruebas sobre tamaño de entrada}
+
+El objetivo de éstas pruebas es estudiar el desempeño de cada uno de los distribuidores con respecto al tamaño de la entrada, para éstas pruebas se establece:
+
+\begin{itemize}
+	\item Motor de búsqueda es mejor costo
+	\item Las entradas seleccionadas son: E1, E7 y E11
+	\item Los tiempos de ejecución son: para E1 3seg, E7 y E11 10 seg.
+	\item En la prueba se varía la estrategia de distribución.
+	\item Los pesos para el costo de la solución total es 33 para cada costo.
+\end{itemize}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E1 con 3seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\
+	\hline
+	S1 &1 &1174842 &1197956 &340336 &2 &429& No óptima \\
+	\hline
+	S2 &1 &1151598 &1174266  &340336  &2 &429& No óptima \\
+	\hline
+	S3 &1 &816354  &832574  &340336  &2 &429& No óptima \\
+	\hline
+	S4 &1 &1129914 &1152164  &340336  &2 &429& No óptima \\
+	\hline
+	S5 &1 &1205886 &1229597  &340336  &2 &429& No óptima \\
+	\hline
+	S6 &1 &1165014 &1187940  &340336  &2 &429& No óptima \\
+	\hline
+	S7 &1 &1208226 &1231982  &340336  &2 &429& No óptima \\
+	\hline
+	S8 &1 &872202  &889496  &340336  &2 &429& No óptima \\
+	\hline
+	S9 &1 &1161738  &1184600  &340336  &2 &429& No óptima \\
+	\hline
+	S10 &1 &1184826  &1208132  &340336  &2 &429& No óptima \\
+	\hline
+	SG1 &1 &1201674  &1209898  &340336  &2 &429& No óptima \\
+	\hline
+	SG2 &1 &1267038  &1275681  &340336  &2 &429& No óptima \\
+	\hline
+	SG3  &1 &1147542  &1155419  &340336  &2 &429& No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E7 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &1602260  &1608723 &340336  &2 &693&No óptima \\
+	\hline
+	S2& 1 &1715304  &1722121 &340336  &2 &693&No óptima \\
+	\hline
+	S3& 1 &1755540  &1762483 &340336  &2 &693&No óptima \\
+	\hline
+	S4& 1 &1668362  &1675032 &340336  &2 &693&No óptima \\
+	\hline
+	S5& 1 &1761288  &1768249 &340336  &2 &693&No óptima \\
+	\hline
+	S6& 1 &1462392  &1468417 &340336  &2 &693&No óptima \\
+	\hline
+	S7& 1 &1690396  &1697135 &340336  &2 &693&No óptima \\
+	\hline
+	S8& 1 &1751708  &1758639 &340336  &2 &693&No óptima \\
+	\hline
+	S9& 1 &1736380  &1743263 &340336  &2 &693&No óptima \\
+	\hline
+	S10& 1 &1977796  &1981297 &340336  &2 &693&No óptima \\
+	\hline
+	SG1& 1 &1504544  &1507551 &340336  &2 &693&No óptima \\
+	\hline
+	SG2& 1 &2036234  &2039796 &340336  &2 &693&No óptima \\
+	\hline
+	SG3& 1 &3435872  &3440895 &340336  &2 &693&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E11 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &4834560  &4191013 &340336  &2 &2508&No óptima \\
+	\hline
+	S2& 1 &4753130  &4838068 &340336  &1 &2508&No óptima \\
+	\hline
+	S3& 1 &4628590  &4713450 &340336  &1 &2508&No óptima \\
+	\hline
+	S4& 1 &4901620  &4986651 &340336  &1 &2508&No óptima \\
+	\hline
+	S5& 1 &4863300  &4948307 &340336  &1 &2508&No óptima \\
+	\hline
+	S6& 1 &3766390  &3850710 &340336  &1 &2508&No óptima \\
+	\hline
+	S7& 1 &4398670  &4483386 &340336  &1 &2508&No óptima \\
+	\hline
+	S8& 1 &5098010  &5183165 &340336  &1 &2508&No óptima \\
+	\hline
+	S9& 1 &5054900  &5140027 &340336  &1 &2508&No óptima \\
+	\hline
+	S10& 1 &4798660  &5088760 &340336  &1 &2508&No óptima \\
+	\hline
+	SG1& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+	SG2& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+	SG3& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+Para las pruebas por motor de búsqueda se establece:
+
+\begin{itemize}
+	\item En la prueba se utiliza la distribución S1.
+	\item Las entradas seleccionadas son: E1, E7 y E11
+	\item Los tiempos de ejecución son: para E1 3seg, E7 y E11 10 seg.
+	\item Motor de búsqueda se varía.
+	\item Los pesos para el costo de la solución total es 33 para cada costo.
+\end{itemize}
+
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E1 con 3 seg de ejecución variando el motor de búsqueda} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Motor búsqueda} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	CT& 1 &1180926  &1204157 &340336  &2 &429&No óptima \\
+	\hline
+	C1& 1 &926334  &944669 &340336  &2 &429&No óptima \\
+	\hline
+	C2& 1 &920094  &938309 &340336  &2 &462&No óptima \\
+	\hline
+	C3& 1 &1177962  &1201136 &340336  &2 &462&No óptima \\
+	\hline
+	Ninguno& 1 &2034  &2584 &527024  &12 &891&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E7 con 10 seg de ejecución variando el motor de búsqueda} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Motor búsqueda} & \cellcolor[gray]{0.9}\textbf{Resultados} \\
+	\hline
+	CT& 1 &2796886  &2807090 &340336  &1 &693&No óptima \\
+	\hline
+	C1& 1 &2933880  &2944513 &340336  &1 &693&No óptima \\
+	\hline
+	C2& 1 &2338004  &2346771 &340336  &1 &693&No óptima \\
+	\hline
+	C3& 1 &2534394  &2543776 &340336  &1 &429&No óptima \\
+	\hline
+	Ninguno& 1 &12938  &14414 &340336  &10 &1122&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E11 con 10 seg de ejecución variando el motor de búsqueda} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Motor búsqueda} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	CT& 1 &4762710  &4847654 &340336  &2 &2508&No óptima \\
+	\hline
+	C1& 1 &4930360  &5015409 &340336  &2 &2508&No óptima \\
+	\hline
+	C2& 1 &4973470  &5058546 &340336  &2 &2541&No óptima \\
+	\hline
+	C3& 1 &4791450  &4876412 &340336  &2 &2541&No óptima \\
+	\hline
+	Ninguno& 1 &58930  &140918 &340336  &11 &2904&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\subsection{Pruebas de acuerdo a la distribución de la asignación en la banda}
+
+Estas pruebas se ejecutan de la siguiente manera:
+
+\begin{itemize}
+	\item Motor de búsqueda es mejor costo
+	\item Las entradas seleccionadas son: E3, E4, E5 y E6.
+	\item Los tiempos de ejecución para todas son 10 seg.
+	\item En la prueba se utilizan las siguientes estrategias distribución: S1, S2, SG1, SG2 y SG3.
+	\item Los pesos para el costo de la solución total es 33 para cada costo.
+\end{itemize}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E3 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &4563891  &4630575 &340336  &1 &1650&No óptima \\
+	\hline
+	S2& 1 &4804131  &4874277 &340336  &1 &1683&No óptima \\
+	\hline
+	SG1& 1 &4749843  &4773512 &340336  &1 &1683&No óptima \\
+	\hline
+	SG2& 1 &4881715  &4906018 &340336  &1 &1683&No óptima \\
+	\hline
+	SG3& 1 &4748803  &4772467 &340336  &1 &1683&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E4 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &4812867  &4883141 &340336  &2 &1650&No óptima \\
+	\hline
+	S2& 1 &4832003  &4902554 &340336  &1 &1683&No óptima \\
+	\hline
+	SG1& 1 &4723011  &4746551 &340336  &1 &1683&No óptima \\
+	\hline
+	SG2& 1 &4698259  &4721680 &340336  &1 &1683&No óptima \\
+	\hline
+	SG3& 1 &4879635  &4903928 &340336  &1 &1683&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E5 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &4814115  &4884408 &340336  &1 &1650&No óptima \\
+	\hline
+	S2& 1 &4746931  &4816253 &340336  &1 &1650&No óptima \\
+	\hline
+	SG1& 1 &4835539  &4859620 &340336  &1 &1650&No óptima \\
+	\hline
+	SG2& 1 &4949315  &4973943 &340336  &1 &1650&No óptima \\
+	\hline
+	SG3& 1 &4718019  &4741535 &340336  &1 &1650&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E6 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &103747  &371539 &340336  &1 &2376&No óptima \\
+	\hline
+	S2& 1 &78995  &300207 &340336  &1 &2376&No óptima \\
+	\hline
+	SG1& 1 &90435  &91703 &340336  &1 &2376&No óptima \\
+	\hline
+	SG2& 1 &85859  &87105 &340336  &1 &2376&No óptima \\
+	\hline
+	SG3& 1 &89811  &91076 &340336  &1 &2376&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\subsection{Pruebas sobre estructura requerimientos}
+
+Los requerimientos pueden estructurarse como homogéneos sí todos los operadores solicitan el mismo número de canales o heterogéneos en caso contrario.
+
+\begin{itemize}
+	\item Motor de búsqueda es mejor costo
+	\item Las entradas seleccionadas son: E7, E8, E9, E10, E11, E12	
+	\item Los tiempos de ejecución para todas son 10 seg.
+	\item En la prueba se utilizan las siguientes estrategias distribución: S6, S7, S8, S9, SG1, SG2 y SG3.
+	\item Los pesos para el costo de la solución total es 33 para cada costo.
+\end{itemize}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E7 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S6& 1 &2765272  &2775377 &340336  &1 &693&No óptima \\
+	\hline
+	S7& 1 &2867778  &2878204 &340336  &1 &693&No óptima \\
+	\hline
+	S8& 1 &2832332  &2842647 &340336  &1 &693&No óptima \\
+	\hline
+	S9& 1 &2931964  &2942591 &340336  &1 &693&No óptima \\
+	\hline
+	SG1& 1 &3515386  &3520492 &340336  &1 &693&No óptima \\
+	\hline
+	SG2& 1 &3501974  &3507066 &340336  &1 &693&No óptima \\
+	\hline
+	SG3& 1 &3552748  &3557893 &340336  &1 &693&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E8 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S6& 1 &3350612  &3365946 &340336  &1 &1419&No óptima \\
+	\hline
+	S7& 1 &3182004  &3197075 &340336  &1 &1419&No óptima \\
+	\hline
+	S8& 1 &3180088  &3195155 &340336  &1 &1419&No óptima \\
+	\hline
+	S9& 1 &4117012  &4117012 &340336  &1 &1419&No óptima \\
+	\hline
+	SG1& 1 &2900352  &2911927 &340336  &1 &1419&No óptima \\
+	\hline
+	SG2& 1 &2946336  &2957935 &340336  &1 &1419&No óptima \\
+	\hline
+	SG3& 1 &2938672  &2950267 &340336  &1 &1419&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E9 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S6& 1 &4834560  &4191013 &340336  &1 &2508&No óptima \\
+	\hline
+	S7& 1 &4753130  &4838068 &340336  &1 &2508&No óptima \\
+	\hline
+	S8& 1 &4863300  &4948307 &340336  &1 &2508&No óptima \\
+	\hline
+	S9& 1 &3766390  &3850710 &340336  &1 &2508&No óptima \\
+	\hline
+	SG1& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+	SG2& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+	SG3& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E10 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S6& 1 &4834560  &4191013 &340336  &1 &2508&No óptima \\
+	\hline
+	S7& 1 &4753130  &4838068 &340336  &1 &2508&No óptima \\
+	\hline
+	S8& 1 &4863300  &4948307 &340336  &1 &2508&No óptima \\
+	\hline
+	S9& 1 &3766390  &3850710 &340336  &1 &2508&No óptima \\
+	\hline
+	SG1& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+	SG2& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+	SG3& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E11 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S6& 1 &4834560  &4191013 &340336  &1 &2508&No óptima \\
+	\hline
+	S7& 1 &4753130  &4838068 &340336  &1 &2508&No óptima \\
+	\hline
+	S8& 1 &4863300  &4948307 &340336  &1 &2508&No óptima \\
+	\hline
+	S9& 1 &3766390  &3850710 &340336  &1 &2508&No óptima \\
+	\hline
+	SG1& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+	SG2& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+	SG3& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E12 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S6& 1 &4834560  &4191013 &340336  &1 &2508&No óptima \\
+	\hline
+	S7& 1 &4753130  &4838068 &340336  &1 &2508&No óptima \\
+	\hline
+	S8& 1 &4863300  &4948307 &340336  &1 &2508&No óptima \\
+	\hline
+	S9& 1 &3766390  &3850710 &340336  &1 &2508&No óptima \\
+	\hline
+	SG1& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+	SG2& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+	SG3& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+	
+\subsection{Pruebas sobre tamaño de requerimientos}
+
+Se busca analizar el impacto del tamaño de los requerimientos en el desempeño de la aplicación.
+
+\begin{itemize}
+	\item Motor de búsqueda es mejor costo
+	\item Las entradas seleccionadas son: E2, E12, E15.	
+	\item Los tiempos de ejecución para todas son 10 seg.
+	\item En la prueba se utilizan las siguientes estrategias distribución: S1, S2, SG1, SG2 y SG3.
+	\item Los pesos para el costo de la solución total es 33 para cada costo.
+\end{itemize}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E2 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &4754835  &4824272 &340336  &1 &1650&No óptima \\
+	\hline
+	S2& 1 &4798099  &4868157 &340336  &1 &1650&No óptima \\
+	\hline
+	SG1& 1 &4678915  &4702243 &340336  &1 &1650&No óptima \\
+	\hline
+	SG2& 1 &4759411  &4783126 &340336  &1 &1650&No óptima \\
+	\hline
+	SG3& 1 &4812867  &4836839 &340336  &1 &1650&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E12 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &2291080  &2646865 &340336  &1 &5709&No óptima \\
+	\hline
+	S2& 1 &2425200  &2781027 &340336  &1 &5709&No óptima \\
+	\hline
+	SG1& 1 &11040  &366000 &340336  &0 &X&No óptima \\
+	\hline
+	SG2& 1 &11040  &366000 &340336  &0 &X&No óptima \\
+	\hline
+	SG3& 1 &11040  &366000 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E15 con 10 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &17451  &429219 &340336  &0 &X&No óptima \\
+	\hline
+	S2& 1 &17451  &429246 &340336  &0 &X&No óptima \\
+	\hline
+	SG1& 1 &17451  &429158 &340336  &0 &X&No óptima \\
+	\hline
+	SG2& 1 &17451  &429158 &340336  &0 &X&No óptima \\
+	\hline
+	SG3& 1 &17451  &429158 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+\subsection{Pruebas sobre tiempo de exploración en entradas grandes}
+
+En estas pruebas se busca medir el rendimiento de la aplicación ante entradas grandes, eligiendo diferentes tiempos de ejecución.
+
+\begin{itemize}
+	\item Motor de búsqueda es mejor costo
+	\item Las entrada seleccionada son: E13.	
+	\item Los tiempos de ejecución para todas son 5 seg, 10 seg y 20 seg.
+	\item En la prueba se utilizan las siguientes estrategias distribución: S1, S2, SG1, SG2 y SG3.
+	\item Los pesos para el costo de la solución total es 33 para cada costo.
+\end{itemize}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E13 con 5 seg de ejecución variando estrategia de distribución} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &542006  &733982 &340336  &1 &17985&No óptima \\
+	\hline
+	S2& 1 &1232566  &1424734 &340336  &1 &18975&No óptima \\
+	\hline
+	SG1& 1 &13296  &205048 &340336  &0 &X&No óptima \\
+	\hline
+	SG2& 1 &13296  &205048 &340336  &0 &X&No óptima \\
+	\hline
+	SG3& 1 &13296  &205048 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E13 con 10 seg de ejecución variando estrategia de distribución}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &3832956  &4025847 &340336  &1 &17985&No óptima \\
+	\hline
+	S1& 1 &3908486  &4101398 &340336  &1 &18975&No óptima \\
+	\hline
+	SG1& 1 &13296  &205048 &340336  &0 &X&No óptima \\
+	\hline
+	SG2& 1 &13296  &205048 &340336  &0 &X&No óptima \\
+	\hline
+	SG3& 1 &13296  &205048 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E13 con 20 seg de ejecución variando estrategia de distribución}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &9476126  &9670586 &340336  &1 &17985&No óptima \\
+	\hline
+	S2& 1 &9314276  &9508691 &340336  &1 &18975&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+Para este caso SG1, SG2 y SG3, fallan por memoria virtual excedida.
+
+\subsection{Pruebas de acuerdo al nivel de recomputación}
+
+En estas pruebas se estudia el efecto del nivel de recomputación en del desempeño del proyecto, se escoge una entrada de tamaño mediano para realizar las diferentes pruebas. 
+
+\begin{itemize}
+	\item Motor de búsqueda es mejor costo
+	\item Las entrada seleccionada son: E11.	
+	\item El tiempo de ejecución es 10 seg.
+	\item En la prueba se utilizan las siguientes estrategias distribución: S1 y SG1.
+	\item Los pesos para el costo de la solución total es 33 para cada costo.
+	\item Los niveles de recomputación son 1, 2, 4 y 8.
+\end{itemize}
+
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E11 con 10 seg de ejecución con nivel de recomputación 1} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &4753130  &4838069 &340336 &2 &2508&No óptima \\
+	\hline
+	SG1& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E11 con 10 seg de ejecución con nivel de recomputación 2}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &4676490  &4761380 &4761380 &2 &2508&No óptima \\
+	\hline
+	SG1& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E11 con 10 seg de ejecución con nivel de recomputación 4}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &4642960  &4727829 &340336  &1 &2508&No óptima \\
+	\hline
+	SG1& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E11 con 10 seg de ejecución con nivel de recomputación 6}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &3718490  &3802780 &340336  &1 &2508&No óptima \\
+	\hline
+	SG1& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{3cm}|p{1.0cm}|p{1.6cm}|p{1.6cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{2.7cm}|}
+	\caption{Pruebas para E11 con 10 seg de ejecución con nivel de recomputación 8} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia} & \cellcolor[gray]{0.9}\textbf{Ec} & \cellcolor[gray]{0.9}\textbf{Nv} & \cellcolor[gray]{0.9}\textbf{Np} & \cellcolor[gray]{0.9}\textbf{Um} & \cellcolor[gray]{0.9}\textbf{Ns} &  \cellcolor[gray]{0.9}\textbf{Mc} & \cellcolor[gray]{0.9}\textbf{Tipo}\\	\hline
+	S1& 1 &4848930  &984496 &4933928  &1 &2508&No óptima \\
+	\hline
+	SG1& 1 &6240  &88160 &340336  &0 &X&No óptima \\
+	\hline
+\end{longtable}	
+\end{center}
+
+\subsection{Pruebas de flexibilidad y debilidad de restricciones}
+
+Las pruebas correspondientes a la flexibilidad y debilidad de restricciones se realizan así:
+
+
+\begin{itemize}
+	\item Motor de búsqueda es mejor costo
+	\item Las entradas seleccionadas son: F1, F2, F3
+	\item Los tiempos de ejecución para todas son 10 seg.
+	\item {Se establecen dos iteraciones así:
+		\begin{itemize}
+			\item \textbf{Iteración 1:} No considerar separación y no considerar tope.
+			\item \textbf{Iteración 2:} No considerar tope y Número de operadores por canal es 2.
+		\end{itemize}
+	}
+	\item En la prueba se utilizan las siguientes estrategias distribución: S1 y SG1.
+	\item Los pesos para el costo de la solución total es 33 para cada costo.
+\end{itemize}
+
+\begin{center}
+\begin{longtable}{|p{4cm}|p{6.5cm}|p{6.5cm}|}
+	\caption{Pruebas flexibilidad y debilidad para F1}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia distribución} & \cellcolor[gray]{0.9}\textbf{Resultados iteración 1}  &\cellcolor[gray]{0.9} \textbf{Resultados iteración 2} \\
+	\hline
+	S1& \textbf{Ec}:1 \textbf{Nv}:5417418  \textbf{Np}:5521525  \textbf{Um}:340336  \textbf{Ns}:1 \textbf{Mc}:1386, No óptima & \textbf{Ec}:0 \textbf{Nv}:5455326  \textbf{Np}:5560788  \textbf{Um}:340336  \textbf{Ns}:1 \textbf{Mc}:1452, No óptima\\
+	\hline
+	SG1& \textbf{Ec}:1 \textbf{Nv}:901970  \textbf{Np}:984496  \textbf{Um}:340336  \textbf{Ns}:1 \textbf{Mc}:1386, No óptima & \textbf{Ec}:1 \textbf{Nv}:5638002  \textbf{Np}:5674661  \textbf{Um}:340336  \textbf{Ns}:1 \textbf{Mc}:1452, No óptima\\
+	\hline
+\end{longtable}	
+\end{center}
+
+
+\begin{center}
+\begin{longtable}{|p{4cm}|p{6.5cm}|p{6.5cm}|}
+	\caption{Pruebas flexibilidad y debilidad para F2} \\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia distribución} & \cellcolor[gray]{0.9}\textbf{Resultados iteración 1} &\cellcolor[gray]{0.9} \textbf{Resultados iteración 2} \\
+	\hline
+	S1& \textbf{Ec}:1 \textbf{Nv}:477  \textbf{Np}:245128  \textbf{Um}:340336  \textbf{Ns}:0 \textbf{Mc}:X, No óptima & \textbf{Ec}:1 \textbf{Nv}:6572133  \textbf{Np}:6635126  \textbf{Um}:340336  \textbf{Ns}:1 \textbf{Mc}:1155, No óptima\\
+	\hline
+	SG1& \textbf{Ec}:1 \textbf{Nv}:477  \textbf{Np}:224  \textbf{Um}:340336  \textbf{Ns}:0 \textbf{Mc}:X, No óptima & \textbf{Ec}:1 \textbf{Nv}:6448269  \textbf{Np}:6468681  \textbf{Um}:340336  \textbf{Ns}:1 \textbf{Mc}:1188, No óptima\\
+	\hline
+\end{longtable}	
+\end{center}
+
+
+\begin{center}
+\begin{longtable}{|p{4cm}|p{6.5cm}|p{6.5cm}|}
+	\caption{Pruebas flexibilidad y debilidad para F3}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Estrategia distribución} & \cellcolor[gray]{0.9}\textbf{Resultados iteración 1} &\cellcolor[gray]{0.9} \textbf{Resultados iteración 2} \\
+	\hline
+	S1& \textbf{Ec}:1 \textbf{Nv}:477  \textbf{Np}:217848  \textbf{Um}:340336  \textbf{Ns}:0 \textbf{Mc}:X, No óptima & \textbf{Ec}:1 \textbf{Nv}:6812997  \textbf{Np}:6878325  \textbf{Um}:340336  \textbf{Ns}:1 \textbf{Mc}:1452, No óptima\\
+	\hline
+	SG1& \textbf{Ec}:1 \textbf{Nv}:477  \textbf{Np}:224  \textbf{Um}:340336  \textbf{Ns}:0 \textbf{Mc}:X, No óptima & \textbf{Ec}:1 \textbf{Nv}:6337197  \textbf{Np}:6357253  \textbf{Um}:340336  \textbf{Ns}:1 \textbf{Mc}:1485, No óptima\\
+	\hline
+\end{longtable}	
+\end{center}
+
+

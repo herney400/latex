@@ -1,0 +1,37 @@
+\section{Anotaciones sobre la implementación}
+
+\subsection{Número de variables de dominios finitos y propagadores}
+
+En la ejecución del aplicativo se da un gran número de variables de dominios finitos por:
+
+\begin{itemize}
+	\item Estructura de matriz de la variable de decisión.
+	\item Operaciones de trasponer ésta matriz.
+	\item Variables auxiliares para el cálculo de costos.
+	\item Variables auxiliares para estrategias de búsqueda.
+	\item Variables auxiliares para estrategias de distribución.
+	\item Tamaño del árbol generado.
+\end{itemize}
+
+Se ha encontrado que se genera un gran número de variables de estado finitos y propagadores, no es posible realizar un cálculo estimado de cuantas se generan en una instancia dada del problema, pero se espera un gran número debido a la forma en que se ha implementado el aplicativo.
+
+\subsection{Tamaño de entradas}
+
+La mayor entrada corresponde a una asignación de 831 canales, que corresponde a la banda de 800MHz, sin embargo el \textit{storage} de Mozart OZ, presenta ciertas limitaciones que al ser desbordadas generan en un problema de memoria que produce un error en el aplicativo y lo cierra de inmediato.
+Este problema fue encontrado al inicio del proyecto cuando se intentó manejar una entrada con los detallas de las divisiones geográficas, por lo que se debe tener presente para futuros desarrollos usando como base la aplicación presentada en este proyecto de grado.
+
+\subsection{Errores conocidos del aplicativo}
+
+Los errores conocidos del aplicativo son:
+
+\begin{itemize}
+	\item Si se usa una versión antigua de un navegador, los reportes no se verán por la incompatibilidad de la funciones de JavaScript.
+	\item Si una entrada no es válida no se generará archivo de salida, mostrándose un mensaje de error. Para éste efecto se ha creado un generador de entradas, debido a la complejidad de la estructura de la misma.
+\end{itemize}
+
+Es posible existan más errores, sin embargo estos son los más relevantes y que no pueden ser resueltos desde el proceso de implementación de la aplicación prototipo.
+
+\subsection{Consideraciones para implementación usando programación por restricciones}
+
+Es necesario contar con la versión \textit{1.4.0} de \textit{Mozart OZ} debido a que el \textit{Parser XML} ha sido implementado para ésta versión, durante el proyecto se encontró el problema que el servidor de AVISPA, contaba con la versión \textit{1.3.6} que no tiene implementado el \textit{Parser XML}, la solución fue instalar en una carpeta aparte la versión \textit{1.4.0} y usar las funciones $putenv()$ y $setenv()$ \footnote{'Para mayor información consultar documentación de PHP disponible en \url{http://www.php.net/manual/es}, consultado Noviembre 2012'} que permiten configurar las variables de entorno, en específico la variable $PATH$ para direccionar la ejecución hacia la versión actualizada.
+

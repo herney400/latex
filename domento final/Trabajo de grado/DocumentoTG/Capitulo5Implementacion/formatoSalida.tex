@@ -1,0 +1,133 @@
+
+\section{Formato de salidas} \label{sec:formatSal}
+
+A continuación se definen la estructura de salidas que se va a utilizar en el aplicativo, un ejemplo puede ser consultado en el anexo salida de ejemplo ubicado en la página \pageref{ejemploSalida}.
+
+\subsection{Formato general}
+
+A partir de la metodología la estructura de la salida XML es la siguiente:
+
+\begin{enumerate}
+	\item{Raíz del documento:
+
+	\lstset{frameround=fttt}
+	\begin{lstlisting}[frame=trBL, language=XML]
+	<solutions>
+	</solutions>
+	\end{lstlisting}}
+
+	\item{Se establece un encabezado donde se encuentra la información de la ejecución de la aplicación:
+
+	\lstset{frameround=fttt}
+	\begin{lstlisting}[frame=trBL, language=XML]
+	<head>
+	</head>
+	\end{lstlisting}}
+	
+	\item{Se estructura cada solución encontrada de la siguiente forma:
+
+	\lstset{frameround=fttt}
+	\begin{lstlisting}[frame=trBL, language=XML]
+	<solution id="n">
+	</solution>
+	\end{lstlisting}}	
+	
+	$n$ indica el número de la solución, estas se encuentran ordenadas de acuerdo al mejor costo.
+
+	\item{Se colocan los costos de cada solución y el reporte de la salida.
+
+	\lstset{frameround=fttt}
+	\begin{lstlisting}[frame=trBL, language=XML]
+	<solution>
+		<costs>
+			...
+		</costos>
+		<report>
+			...
+		</report>
+	</solution>
+	\end{lstlisting}}
+\end{enumerate}
+
+Los campos de información de ejecución permiten evaluar el desempeño de la aplicación.
+
+\begin{center}
+\begin{longtable}{|p{7cm}|p{7cm}|}
+	\caption{Campos de información de ejecución en general.}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Campo} & \cellcolor[gray]{0.9}\textbf{Descripción} \\
+	\hline
+	numSolutions & Número de soluciones encontradas.\\
+	\hline
+	memoryUsage & Uso del memoria del aplicativo.\\
+	\hline
+	executionTime & Tiempo de ejecución.\\
+	\hline
+\end{longtable}	
+\end{center}
+
+Los campos propios de la aplicación de programación por restricciones describen algunos aspectos de la ejecución usando programación por restricciones.
+\newpage
+\begin{center}
+\begin{longtable}{|p{7cm}|p{9cm}|}
+	\caption{Campos de información de ejecución usando programación por restricciones.}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Campo} & \cellcolor[gray]{0.9}\textbf{Descripción} \\
+	\hline
+	considerTop & Indica si se considera la restricción del tope de canales en la ejecución.\\
+	\hline
+	staticAssignation & Especifica si la asignación de canales de los operadores que requieren asignación se mantiene.\\
+	\hline
+	considerSeparation & Muestra si en la ejecución se ha tomado en cuenta la separación de canales de operadores diferentes.\\
+	\hline
+	spacesCreated & Número de espacios computacionales creados en la ejecución.\\
+	\hline
+	spacesSucceeded & Número de espacios computacionales exitosos en la ejecución.\\
+	\hline
+	FDVariables & Número de variables de estado finito creadas en la ejecución.\\
+	\hline
+	propagators & Número de propagadores creados durante la ejecución.\\
+	\hline
+\end{longtable}	
+\end{center}
+
+\subsection{Campos de una solución}
+
+En el reporte de una solución tiene dos campos de información; el primero que son los costos de la solución y el segundo que es el reporte de la solución.
+
+\subsubsection{Campos de los costos de una solución}
+
+\begin{center}
+\begin{longtable}{|p{7cm}|p{9cm}|}
+	\caption{Campos de costos de una solución.}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Campo} & \cellcolor[gray]{0.9}\textbf{Descripción} \\
+	\hline
+	blocksNumber & Número de bloques existentes en la solución.\\
+	\hline
+	difChannelNumberMaxBlockFree & Diferencia entre el tamaño del bloque libre más grande y el número de canales.\\
+	\hline
+	channelNumberUseless & Número de canales inutilizados por separación.\\
+	\hline
+	totalCost & Costo total de la solución, que consiste en sumar los anteriores costos multiplicados cada uno por un peso especificado por el usuario.\\
+	\hline
+	violations & Número de violaciones a las restricciones. \textbf{Sólo aplica en algoritmo genético}.\\
+	\hline
+\end{longtable}	
+\end{center}
+
+\subsubsection{Campos de reporte de una solución}
+
+\begin{center}
+\begin{longtable}{|p{7cm}|p{9cm}|}
+	\caption{Campos de información de un reporte de una solución específica.}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Campo} & \cellcolor[gray]{0.9}\textbf{Descripción} \\
+	\hline
+	operator & Indica cual es la asignación del operador.\\
+	\hline
+	channels & Asignación final para un operador dado.\\
+	\hline
+\end{longtable}	
+\end{center}
+

@@ -1,0 +1,92 @@
+\section{Diseño del algoritmo genético}
+
+\subsection{El algoritmo} \label{sec:algGen}
+
+El diseño del algoritmo genético tiene los siguientes pasos:
+
+\begin{itemize}
+	\item Definición del individuo.
+	\item Función de aptitud.
+	\item Criterio de selección.
+	\item Criterio de cruce.
+	\item Criterio de mutación.
+	\item Selección de individuos para la próxima generación.
+	\item Criterio de parada.
+\end{itemize}
+
+El objetivo del algoritmo es minimizar el costo de la solución.
+
+
+\subsubsection{El individuo}
+
+El individuo es una cadena de carácteres con ceros y unos de tamaño $N$ por $T=card(Opt)$, que representa la asignación final.
+
+\subsubsection{Función de aptitud}
+
+El costo total se define tomando en cuenta:
+
+\begin{itemize}
+	\item $Cost_{T}$ de la ecuación \ref{equ:costR}.
+	\item $C$ número de canales.
+	\item $NR_{e}$ número de restricciones que la solución infringe.
+\end{itemize}
+
+\begin{equation}
+	\label{equ:costGR}
+	\begin{array}{cc}
+		CostGen_{T} =10000*T*C*NR_{e} + Cost_{T}
+	\end{array}
+\end{equation}
+
+En la ecuación se busca darle un mayor en costo a una solución que presente infracciones a las restricciones del modelo, pero se presentan algunos problemas que se explican en la sección \ref{sec:genProblema}.
+
+Para definir la función de aptitud se normalizan los costos de la población de acuerdo a una curva Gaussiana con con desviación estándar 1.5.
+Se hace un corte de acuerdo al método de \textit{sigma truncation}\cite{Truncation}.\footnote{El método de sigma \textit{sigma truncation} consiste en descartar los individuos cuya función de aptitud sea peor que cierto valor de desviación estándar.}
+
+\subsubsection{Criterio de selección}
+
+La selección se hace por ruleta\footnote{La selección por ruleta utiliza un número aleatorio $r$ y el tamaño de la población inicial $P$ para generar $r_{j}=\frac{r+j-1}{j} \forall j=1,...P$}, para seleccionar un número de individuos igual al de la población inicial.
+
+\subsubsection{Criterio de cruce}
+
+Los individuos se cruzan con una probabilidad especificada por el usuario. Se utiliza el criterio de reemplazo por inserción \footnote{El reemplazo por inserción, significa tomar cierto porcentaje de características de cada individuo y mezclarlas para generar uno o más individuos hijos} para generar dos individuos hijos por pareja de individuos padres.
+
+\subsubsection{Criterio de mutación}
+
+Se selecciona un individuo de acuerdo a una probabilidad especificada por el usuario y se cambia el valor de uno de sus campos elegido con una función pseudoaleatoria, si el campo contiene un cero se cambia por uno y viceversa.
+
+\subsubsection{Selección individuos próxima generación}
+
+Se seleccionan los individuos generados con el criterio de cruce y un número de los mejores padres para completar el tamaño inicial de la población, así generación tras generación el tamaño de la población es estable.
+
+\subsubsection{Criterio de parada}
+
+Se realiza de acuerdo a un tiempo de ejecución especificado por el usuario.
+
+\subsection{Problemas de modelado} \label{sec:genProblema}
+
+Debido a la formula de la función de aptitud, el algoritmo teóricamente debe presentar el problema de mínimos locales, en este caso se presentaría en el momento que no se tenga infracciones a las restricciones y se tenga un costo que no es el óptimo, el algoritmo puede quedar atrapado allí debido a que para obtener un mejor costo debe pasar por un proceso que implica tener costos muy por encima del obtenido en ese punto.
+\\\\
+Para enfrentar ese problema el usuario puede decidir cuantas veces ejecutar el algoritmo para aumentar su precisión.
+
+\subsection{Valores recomendados}
+
+En la siguiente tabla se muestran los parámetros recomendados de acuerdo al método de solución propuesto \cite{4554416}.
+
+\begin{center}
+\begin{longtable}{|p{7cm}|p{7cm}|}
+	\caption{Valores recomendados para la aplicación basada el algoritmos genéticos} \label{tabla:paramgenetico}\\
+	\hline
+	\cellcolor[gray]{0.9} \textbf{Parámetro} & \cellcolor[gray]{0.9}\textbf{Valor} \\
+	\hline
+	Número de individuos. & 20-40.\\
+	\hline
+	Probabilidad de cruce individuo seleccionado& 90\% (0.9).\\
+	\hline
+	Probabilidad mutación & 2\% (0.02).\\
+	\hline
+	Valor de sigma & 1.5 desviación estándar.\\
+	\hline
+\end{longtable}	
+\end{center}
+
